@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --secondary-bg: #0F0F0F;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --primary: #3B82F6;
+  --secondary: #8B5CF6;
+  --foreground: #FFFFFF;
+  --muted: #A1A1AA;
+  
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-foreground: var(--foreground);
+  --color-muted-text: var(--muted);
+  
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(59, 130, 246, 0.2);
+  color: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Patterns & Premium Blurs */
+.bg-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 30px 30px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Premium Glassmorphic Cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ambient Radial Glow Gradients */
+.glow-primary {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}
+
+.glow-secondary {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+}
+
+/* Custom Utilities */
+.mask-radial {
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+}
+
+.mask-edge {
+  mask-image: linear-gradient(to bottom, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+/* Premium Keyframes and Animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Custom Orbit Pause on Hover Utility */
+.group-hover-paused:hover div {
+  animation-play-state: paused !important;
+}
+
+/* Continuous Scrolling Marquee */
+@keyframes marquee-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 40s linear infinite;
+  will-change: transform;
+}
+
+.pause-hover:hover .animate-marquee {
+  animation-play-state: paused !important;
+}
+
+/* Animated Gradient Mesh Background */
+.bg-mesh-gradient {
+  background: radial-gradient(at 20% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+              radial-gradient(at 80% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+              radial-gradient(at 40% 80%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+              radial-gradient(at 80% 80%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
+  background-size: 200% 200%;
+  animation: mesh-shift 25s ease infinite alternate;
+  will-change: background-position;
+}
+
+@keyframes mesh-shift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 100% 0%; }
+}
+
+/* Accessibility Keyboard Focus Styles */
+*:focus-visible {
+  outline: 2px solid #3B82F6 !important;
+  outline-offset: 3px !important;
+}
