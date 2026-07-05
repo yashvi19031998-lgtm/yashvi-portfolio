@@ -588,8 +588,31 @@ export default function Home() {
               </p>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.3}>
-              <div className="flex items-center gap-3">
-                <span className="text-xs font-mono text-muted-text">Hover on nodes to freeze rotation</span>
+              <div className="pt-4 space-y-4">
+                <div>
+                  <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">Languages & Frameworks</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["TypeScript", "JavaScript", "PHP 8", "Node.js", "Laravel", "CodeIgniter", "Next.js", "Angular"].map(s => (
+                      <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">API, Data & Auth</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["REST APIs", "GraphQL", "Webhooks", "JWT & RBAC", "PostgreSQL", "MySQL", "Redis", "Supabase"].map(s => (
+                      <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">Integrations & Tools</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Tally ERP", "Twilio / MSG91", "Stripe / PayPal", "Razorpay", "Chart.js", "PDFKit", "Git"].map(s => (
+                      <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
