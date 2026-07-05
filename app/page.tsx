@@ -1188,7 +1188,7 @@ export default function Home() {
                       <button
                         type="submit"
                         disabled={formStatus === "sending"}
-                        className="w-full h-12 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-100 hover:shadow-xl hover:shadow-white/10 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                        className="h-12 px-8 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-100 hover:shadow-xl hover:shadow-white/10 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                       >
                         {formStatus === "sending" ? "Dispatching..." : "Send Message"}
                       </button>
