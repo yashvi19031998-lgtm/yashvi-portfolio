@@ -16,34 +16,34 @@ import { ProjectModal } from "@/components/ui/project-modal";
 import { ExperienceTimeline } from "@/components/sections/experience-timeline";
 
 const STATS = [
-  { 
-    label: "Projects Completed", 
-    value: 48, 
-    suffix: "+", 
+  {
+    label: "Projects Completed",
+    value: 48,
+    suffix: "+",
     icon: Briefcase,
     color: "text-primary",
     glow: "rgba(59, 130, 246, 0.15)"
   },
-  { 
-    label: "Years Experience", 
-    value: 5, 
-    suffix: "+", 
+  {
+    label: "Years Experience",
+    value: 5,
+    suffix: "+",
     icon: Award,
     color: "text-secondary",
     glow: "rgba(139, 92, 246, 0.15)"
   },
-  { 
-    label: "Happy Clients", 
-    value: 35, 
-    suffix: "+", 
+  {
+    label: "Happy Clients",
+    value: 35,
+    suffix: "+",
     icon: Users,
     color: "text-emerald-500",
     glow: "rgba(16, 185, 129, 0.15)"
   },
-  { 
-    label: "Technologies Mastered", 
-    value: 15, 
-    suffix: "+", 
+  {
+    label: "Technologies Mastered",
+    value: 15,
+    suffix: "+",
     icon: Code2,
     color: "text-amber-500",
     glow: "rgba(245, 158, 11, 0.15)"
@@ -248,7 +248,7 @@ const STRENGTHS = [
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
-  
+
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
@@ -261,7 +261,7 @@ export default function Home() {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setFormStatus("sending");
-    
+
     setTimeout(() => {
       setFormStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -281,7 +281,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="w-full max-w-7xl px-6 md:px-12 pt-12 md:pt-20 pb-16 flex flex-col justify-center min-h-[90vh] relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Content Side */}
           <div className="lg:col-span-7 space-y-8 text-left order-2 lg:order-1">
             <ScrollReveal direction="up" delay={0.1}>
@@ -302,7 +302,7 @@ export default function Home() {
                   Hi, I'm <span className="text-white font-bold">Yashvi Shah</span>
                 </h2>
               </ScrollReveal>
-              
+
               <ScrollReveal direction="up" delay={0.3}>
                 <h1 className="text-sm font-semibold tracking-wide uppercase text-muted-text flex flex-wrap items-center gap-2">
                   A Passionate{" "}
@@ -313,7 +313,7 @@ export default function Home() {
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.4}>
-                <h3 
+                <h3
                   className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
@@ -329,6 +329,11 @@ export default function Home() {
               <p className="text-lg text-muted-text max-w-xl leading-relaxed">
                 Over 5 years of experience building enterprise web applications, designing robust RESTful APIs, securing authentication pipelines, and automating complex business processes.
               </p>
+              <div className="flex items-center gap-2 mt-4 text-sm font-medium text-muted-text bg-white/5 border border-white/10 w-fit px-4 py-2 rounded-full">
+                <span>📍 Ahmedabad, Gujarat, India</span>
+                <span className="w-1 h-1 rounded-full bg-white/30"></span>
+                <span>Open to Remote or Hybrid in Ahmedabad</span>
+              </div>
             </ScrollReveal>
 
             {/* Hero CTAs */}
@@ -370,7 +375,7 @@ export default function Home() {
               >
                 {/* Backdrop Glow Behind Profile */}
                 <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary/30 to-secondary/30 blur-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Rotating Gradient Border Wrapper */}
                 <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full p-[3px] bg-gradient-to-tr from-primary via-secondary to-primary bg-[size:200%] animate-[spin_8s_linear_infinite]">
                   {/* Mask / Inner Container */}
@@ -407,7 +412,7 @@ export default function Home() {
             const Icon = stat.icon;
             return (
               <ScrollReveal key={stat.label} direction="up" delay={i * 0.1}>
-                <GlassCard 
+                <GlassCard
                   glowColor={stat.glow}
                   borderColor="rgba(255, 255, 255, 0.08)"
                   className="flex flex-col justify-between p-6 h-40 hover:shadow-2xl transition-all duration-500"
@@ -436,14 +441,14 @@ export default function Home() {
       {/* About Me Section */}
       <section id="about" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
+
           {/* Left Side: Workspace Image and Animated Badges */}
           <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
             <ScrollReveal direction="left">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0F0F0F]/50 p-3 shadow-2xl">
                 {/* Accent lighting border glow */}
                 <div className="absolute -inset-1 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-60 pointer-events-none" />
-                
+
                 <div className="relative aspect-video lg:aspect-square rounded-xl overflow-hidden bg-secondary-bg">
                   <Image
                     src="/images/workspace.png"
@@ -480,7 +485,7 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
                   My Story
                 </div>
-                <h2 
+                <h2
                   className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
@@ -529,7 +534,7 @@ export default function Home() {
               <ScrollReveal direction="right" delay={0.1}>
                 <h3 className="text-xs font-mono uppercase tracking-widest text-white">Milestone Journey</h3>
               </ScrollReveal>
-              
+
               <div className="relative border-l border-white/10 pl-6 ml-3 space-y-10">
                 {TIMELINE.map((item, idx) => (
                   <ScrollReveal key={item.role} direction="right" delay={idx * 0.1} className="relative">
@@ -562,9 +567,9 @@ export default function Home() {
       <section id="skills" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10 overflow-hidden">
         {/* Ambient backlight glow */}
         <div className="absolute right-0 bottom-0 w-[400px] h-[400px] glow-primary rounded-full opacity-10 blur-[100px] pointer-events-none" />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
+
           {/* Left Side: Skills Introduction Copy */}
           <div className="lg:col-span-5 space-y-6">
             <ScrollReveal direction="left">
@@ -606,7 +611,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
               Case Studies
             </div>
-            <h2 
+            <h2
               className="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
@@ -623,8 +628,8 @@ export default function Home() {
           {PROJECTS.map((project, i) => {
             const isEven = i % 2 === 0;
             return (
-              <div 
-                key={project.title} 
+              <div
+                key={project.title}
                 className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
               >
                 {/* Product Interface Card (Large Screenshot with Tilt) */}
@@ -649,7 +654,7 @@ export default function Home() {
                 <div className={`lg:col-span-6 space-y-6 ${isEven ? "order-2" : "order-2 lg:order-1"}`}>
                   <ScrollReveal direction="up" delay={0.1}>
                     <div className="space-y-4">
-                      <h3 
+                      <h3
                         className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-tight"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
@@ -680,7 +685,7 @@ export default function Home() {
                   <ScrollReveal direction="up" delay={0.3}>
                     <div className="flex flex-wrap gap-2 pt-2">
                       {project.tech.map((t) => (
-                        <span 
+                        <span
                           key={t}
                           className="text-[10px] font-mono font-bold px-3 py-1 rounded-full bg-white/5 border border-white/5 text-muted-text uppercase tracking-wider"
                         >
@@ -715,13 +720,13 @@ export default function Home() {
       <section id="experience" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10 overflow-hidden">
         {/* Radial backing glow */}
         <div className="absolute left-0 top-1/4 w-[400px] h-[400px] glow-secondary rounded-full opacity-10 blur-[100px] pointer-events-none" />
-        
+
         <ScrollReveal direction="up">
           <div className="space-y-4 mb-20 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs font-semibold tracking-wide">
               Timeline
             </div>
-            <h2 
+            <h2
               className="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
@@ -739,7 +744,7 @@ export default function Home() {
       {/* Education & Academic history section */}
       <section id="education" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
+
           {/* Left Side: Education timeline (M.Sc., B.Sc., H.S.C., S.S.C.) */}
           <div className="lg:col-span-6 space-y-12">
             <ScrollReveal direction="left">
@@ -905,7 +910,7 @@ export default function Home() {
       <section id="testimonials" className="w-full py-24 border-t border-white/5 bg-[#050505] relative z-10 overflow-hidden">
         {/* Ambient backlight */}
         <div className="absolute right-1/4 top-1/2 w-[350px] h-[350px] glow-primary rounded-full opacity-10 blur-[120px] pointer-events-none" />
-        
+
         <ScrollReveal direction="up" className="max-w-7xl mx-auto px-6 md:px-12 mb-16 text-center md:text-left">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
@@ -925,10 +930,10 @@ export default function Home() {
           {/* Edge fades gradient overlay */}
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
-          
+
           <div className="animate-marquee flex gap-6 px-4">
             {[...TESTIMONIALS, ...TESTIMONIALS].map((test, idx) => (
-              <GlassCard 
+              <GlassCard
                 key={idx}
                 glowColor={test.glow}
                 borderColor="rgba(255, 255, 255, 0.05)"
@@ -977,13 +982,13 @@ export default function Home() {
             const Icon = strength.icon;
             return (
               <ScrollReveal key={strength.title} direction="up" delay={i * 0.08}>
-                <GlassCard 
+                <GlassCard
                   glowColor="rgba(255, 255, 255, 0.05)"
                   borderColor="rgba(255, 255, 255, 0.05)"
                   className="group hover:border-white/10 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col justify-between h-64"
                 >
                   <div className="flex items-start justify-between">
-                    <div 
+                    <div
                       className="p-3 rounded-xl border border-white/5 transition-all duration-300 group-hover:scale-105"
                       style={{ backgroundColor: strength.bg }}
                     >
@@ -1012,9 +1017,9 @@ export default function Home() {
       <section id="contact" className="w-full py-28 border-t border-white/5 bg-mesh-gradient relative z-10 overflow-hidden">
         {/* Floating particles specific to contact background */}
         <Particles quantity={30} />
-        
+
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-          
+
           {/* Left Side: Call to Action Details */}
           <div className="lg:col-span-6 space-y-8">
             <ScrollReveal direction="left">
@@ -1024,7 +1029,7 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.1}>
-              <h2 
+              <h2
                 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.05]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
@@ -1045,7 +1050,7 @@ export default function Home() {
             <ScrollReveal direction="left" delay={0.3}>
               <div className="space-y-4 max-w-sm">
                 <Magnetic range={35} strength={0.2}>
-                  <a 
+                  <a
                     href="mailto:yashvishah991@gmail.com"
                     aria-label="Send email to Yashvi Shah directly at yashvishah991@gmail.com"
                     className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
@@ -1059,7 +1064,7 @@ export default function Home() {
                 </Magnetic>
 
                 <Magnetic range={35} strength={0.2}>
-                  <a 
+                  <a
                     href="tel:+919106060400"
                     aria-label="Call Yashvi Shah directly at +91 91060 60400"
                     className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
@@ -1078,9 +1083,9 @@ export default function Home() {
 
                 <div className="flex gap-4">
                   <Magnetic range={30} strength={0.2}>
-                    <a 
-                      href="https://wa.me/919106060400" 
-                      target="_blank" 
+                    <a
+                      href="https://wa.me/919106060400"
+                      target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Chat with Yashvi Shah on WhatsApp at +91 91060 60400"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-emerald-500/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-white justify-center"
@@ -1091,9 +1096,9 @@ export default function Home() {
                   </Magnetic>
 
                   <Magnetic range={30} strength={0.2}>
-                    <a 
-                      href="https://www.linkedin.com/in/yashvi-shah-3a1915174" 
-                      target="_blank" 
+                    <a
+                      href="https://www.linkedin.com/in/yashvi-shah-3a1915174"
+                      target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visit Yashvi Shah's LinkedIn profile"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-blue-500/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-white justify-center"
@@ -1104,9 +1109,9 @@ export default function Home() {
                   </Magnetic>
 
                   <Magnetic range={30} strength={0.2}>
-                    <a 
-                      href="https://github.com" 
-                      target="_blank" 
+                    <a
+                      href="https://github.com"
+                      target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visit Yashvi Shah's GitHub profile"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-purple-500/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-white justify-center"
@@ -1123,7 +1128,7 @@ export default function Home() {
           {/* Right Side: Interactive Form Card */}
           <div className="lg:col-span-6">
             <ScrollReveal direction="right" delay={0.2}>
-              <GlassCard 
+              <GlassCard
                 glowColor="rgba(139, 92, 246, 0.12)"
                 borderColor="rgba(255, 255, 255, 0.08)"
                 className="p-8 md:p-10 hover:border-white/10 hover:shadow-2xl transition-all duration-500"
@@ -1133,10 +1138,10 @@ export default function Home() {
                     <label htmlFor="name-input" className="text-xs font-mono uppercase tracking-widest text-muted-text font-bold block">
                       Your Name
                     </label>
-                    <input 
+                    <input
                       id="name-input"
-                      type="text" 
-                      name="name" 
+                      type="text"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={handleInputChange}
@@ -1149,10 +1154,10 @@ export default function Home() {
                     <label htmlFor="email-input" className="text-xs font-mono uppercase tracking-widest text-muted-text font-bold block">
                       Email Address
                     </label>
-                    <input 
+                    <input
                       id="email-input"
-                      type="email" 
-                      name="email" 
+                      type="email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={handleInputChange}
@@ -1165,9 +1170,9 @@ export default function Home() {
                     <label htmlFor="message-input" className="text-xs font-mono uppercase tracking-widest text-muted-text font-bold block">
                       Project Specification
                     </label>
-                    <textarea 
+                    <textarea
                       id="message-input"
-                      name="message" 
+                      name="message"
                       required
                       rows={4}
                       value={formData.message}
@@ -1180,7 +1185,7 @@ export default function Home() {
                   {/* Form Submit Button */}
                   <div className="pt-2">
                     <Magnetic range={40} strength={0.15}>
-                      <button 
+                      <button
                         type="submit"
                         disabled={formStatus === "sending"}
                         className="w-full h-12 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-100 hover:shadow-xl hover:shadow-white/10 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
@@ -1192,7 +1197,7 @@ export default function Home() {
 
                   {/* Form Status Messages */}
                   {formStatus === "success" && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-center text-xs font-semibold text-emerald-500"
@@ -1209,9 +1214,9 @@ export default function Home() {
       </section>
 
       {/* Immersive Slide Drawer Case-Study Modal */}
-      <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </div>
   );
