@@ -52,10 +52,10 @@ export default function RootLayout({
     "name": "Yashvi Shah",
     "jobTitle": "Full-Stack Developer & Backend Engineer",
     "url": "https://yashvishah.dev",
-    "email": "yashvishah917@gmail.com",
+    "email": "yashvishah991@gmail.com",
     "sameAs": [
       "https://github.com",
-      "https://linkedin.com"
+      "https://www.linkedin.com/in/yashvi-shah-3a1915174"
     ],
     "knowsAbout": [
       "PHP",

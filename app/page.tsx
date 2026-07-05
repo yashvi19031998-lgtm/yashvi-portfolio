@@ -26,7 +26,7 @@ const STATS = [
   },
   { 
     label: "Years Experience", 
-    value: 6, 
+    value: 5, 
     suffix: "+", 
     icon: Award,
     color: "text-secondary",
@@ -55,100 +55,118 @@ const TIMELINE = [
     role: "Full-Stack Developer",
     company: "CodExalters Techlabs",
     duration: "Sept 2024 - Present",
-    description: "Developing Node.js REST APIs handling 30,000+ daily requests for a CRM platform. Built Angular and Next.js modules, improving page load efficiency by 35%. Implemented JWT authentication and RBAC controls.",
+    description: "Developed enterprise CRM and business automation applications using Node.js, TypeScript, Angular, Next.js, and PostgreSQL. Designed secure REST APIs handling 30,000+ daily requests, improving application performance by 35%.",
   },
   {
     role: "Laravel Developer",
     company: "Latitude Technolabs Pvt. Ltd.",
     duration: "Feb 2023 - June 2024",
-    description: "Developed Laravel accounting systems integrated with Tally ERP modules. Reduced manual transaction flows by 40% and accelerated automated financial report generation by 30%.",
+    description: "Developed and maintained accounting and business management applications. Integrated Tally ERP with custom accounting modules and automated voucher processing workflows, optimizing database queries for large transaction datasets.",
   },
   {
     role: "PHP Developer",
     company: "Eliencys",
     duration: "May 2022 - Jan 2023",
-    description: "Maintained corporate Laravel and CodeIgniter web applications. Spearheaded the integration of dynamic Angular administrative dashboard features.",
+    description: "Developed and maintained Laravel and CodeIgniter applications for business process automation. Built REST APIs, authentication modules, and worked with MySQL databases and Angular-based frontend modules.",
   },
   {
     role: "Junior PHP Developer",
     company: "Sinon-Tech Pvt. Ltd.",
     duration: "May 2021 - Apr 2022",
-    description: "Assisted senior developers with database schema design, backend script writing, and SQL query speed profiling. Maintained legacy client sites and configured custom forms.",
+    description: "Developed REST APIs, authentication modules, and business applications using PHP and MySQL. Assisted in database design, bug fixing, testing, and deployment activities for various features.",
   },
 ];
 
 const PROJECTS = [
   {
-    title: "Real Estate CRM Platform",
-    subtitle: "Enterprise sales and lead management dashboard tracking 10,000+ client profiles.",
-    description: "A secure, high-throughput CRM console containing dynamic sales pipelines, drag-and-drop lead boards, automated rep assignments, and manager analytics.",
+    title: "BizzPlus CRM & Real Estate CRM",
+    subtitle: "Multi-tenant CRM platform using Node.js, PostgreSQL, and Angular.",
+    description: "Built dynamic JSONB form builder, role-based access control (RBAC), audit logs, lead-property matching, and bulk operations. Implemented WhatsApp/Email automation, Facebook Lead Ads integration, queue jobs, cron jobs, PDF generation, and advanced reporting modules.",
     image: "/images/crm_mockup.png",
-    tech: ["Angular", "Node.js", "PostgreSQL", "JWT"],
+    tech: ["Node.js", "PostgreSQL", "Angular", "TypeScript"],
     features: [
-      "Dynamic Kanban Sales Board",
-      "Lead Workflows & API Routing",
-      "JWT Authentication & RBAC",
-      "Omnichannel CRM Message Logs",
-      "Manager Performance Analytics",
-      "Optimized Queries (10k+ Records)"
+      "Dynamic JSONB Form Builder",
+      "Lead-Property Matching",
+      "WhatsApp/Email Automation",
+      "Facebook Lead Ads Sync",
+      "Role-Based Access (RBAC)",
+      "Queue & Cron Jobs"
     ],
-    challenge: "Corporate teams were dropping high-value client leads due to delayed synchronization, lack of automated lead assignment workflows, and slow database lookups spanning thousands of profiles.",
-    solution: "Designed a clean, reactive dashboard utilizing Angular state managers, engineered a robust Node/PostgreSQL REST API with strict index structures, and isolated roles using secure JWT claims.",
-    results: "Optimized response times for datasets exceeding 10,000+ records to under 120ms, reduced lead leakage, and boosted agent response speeds by 35%."
+    challenge: "Enterprise clients needed a highly customizable, multi-tenant CRM capable of automated lead routing, extensive integrations, and complex data querying.",
+    solution: "Developed scalable REST APIs and optimized PostgreSQL queries for high-volume operations, featuring a dynamic JSONB architecture for custom forms.",
+    results: "Successfully scaled backend services to handle thousands of daily API requests, streamlining operations and communication workflows."
   },
   {
-    title: "Tally-Integrated Accounting System",
-    subtitle: "Custom transactional ledger syncing branch databases with Tally ERP modules.",
-    description: "A double-entry bookkeeping synchronization engine that captures local transaction logs and maps them automatically to Tally XML accounting schemas.",
+    title: "AtHeal Hospital Management",
+    subtitle: "Comprehensive hospital workflow and scheduling platform.",
+    description: "Developed Admin, Doctor, Patient, and Appointment Management modules with secure role-based access control. Implemented doctor onboarding, notifications, analytics dashboards, and dynamic website forms.",
     image: "/images/erp_mockup.png",
-    tech: ["Laravel", "Tally ERP (TDL)", "MySQL", "REST APIs"],
+    tech: ["REST APIs", "PostgreSQL", "React", "Node.js"],
     features: [
-      "Automated Voucher Syncing",
-      "Dynamic Multi-Branch Ledger",
-      "TDL Adapter Integration",
-      "Financial Report Generators",
-      "Spot Metal/Gold Price Syncing",
-      "Double-Entry Bookkeeping Audit"
+      "Role-Based Access Control",
+      "Doctor Onboarding Flow",
+      "Appointment Management",
+      "Analytics Dashboards",
+      "Dynamic Website Forms",
+      "Patient Notifications"
     ],
-    challenge: "Accounting departments wasted hours manual-keying invoices, leading to entry discrepancies, branch discrepancies, and slow reconciliation cycles.",
-    solution: "Developed an API-driven Laravel service that compiles MySQL transaction audits, translates records via custom TDL/XML, and updates Tally systems automatically.",
-    results: "Bypassed manual entry loops, reducing manual workflows by 40% and shortening branch-to-Tally ledger reconciliation time by 45%."
+    challenge: "Healthcare facilities required a secure, centralized system to manage appointments, patient records, and doctor availability across web and mobile apps.",
+    solution: "Built scalable REST APIs consumed by multiple clients and designed highly optimized database workflows specifically tailored for healthcare operations.",
+    results: "Improved hospital administration efficiency by centralizing scheduling, data management, and automated notifications."
   },
   {
-    title: "Attendance Management System",
-    subtitle: "Corporate shift scheduler and HR report builder mapping employee timetables.",
-    description: "A modern tracking tool managing clock-in schedules, employee locations, leave requests, and automated monthly payroll calculations.",
-    image: "/images/attendance_mockup.png",
-    tech: ["Laravel", "Angular", "PostgreSQL", "REST APIs"],
-    features: [
-      "Shift Timetable Schedulers",
-      "HR Invoicing & Report Builders",
-      "Leave & Request Approval Flow",
-      "Role-Based Access Controls",
-      "Clock-in Location Verification",
-      "Tamper-Proof Audit Logging"
-    ],
-    challenge: "Managing complex employee shifts, manual timesheets, and late punch audits led to payroll processing errors and team friction.",
-    solution: "Built a reactive Angular dashboard feeding into a Laravel backend, featuring auto-generating shift logs and strict role validations.",
-    results: "Reduced corporate payroll compilation times by 50% while achieving 100% accurate, tamper-proof clock-in accounting."
-  },
-  {
-    title: "Furniture E-commerce Platform",
-    subtitle: "High-performance storefront and inventory control console for luxury home decor.",
-    description: "A fast, transactional retail platform linking custom product catalogs with inventory levels, checkouts, and shipping updates.",
+    title: "Uthereal Platform",
+    subtitle: "Full-stack application engineered with Next.js frontend and backend.",
+    description: "Built authentication, dynamic forms, reporting modules, import/export functionality, and contact management features. Implemented API integrations, data validation, and business workflow automation.",
     image: "/images/ecommerce_mockup.png",
-    tech: ["CodeIgniter", "MySQL", "Bootstrap", "REST APIs"],
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "REST APIs"],
     features: [
-      "Luxury Furniture Catalog Grid",
-      "Inventory Lock-out Adapters",
-      "Live Payment Gateway Sync",
-      "Vendor Management Consoles",
-      "Dynamic Checkout Calculations",
-      "Shipping API Integrations"
+      "Next.js Full-Stack App",
+      "Dynamic Form Handlers",
+      "Import/Export Modules",
+      "Contact Management",
+      "Workflow Automations",
+      "Responsive User Interface"
     ],
-    challenge: "Luxury item sales require strict stock lock-outs during checkout to avoid double-selling high-ticket singular designs.",
-    solution: "Constructed a custom CodeIgniter storefront database model implementing transaction row-locking on MySQL databases during product checkouts.",
-    results: "Maintained zero double-sell incidents across high-traffic flash-sales and improved checkout flow completion."
+    challenge: "The client needed a high-performance, SEO-friendly web platform with robust administrative tools and dynamic content management.",
+    solution: "Leveraged Next.js to develop a seamless full-stack application, ensuring optimized API integrations and rigorous data validation.",
+    results: "Achieved excellent application performance metrics and a highly responsive user experience across all devices."
+  },
+  {
+    title: "Shree Shubham Trust System",
+    subtitle: "Large-scale membership and administration management system.",
+    description: "Developed membership management, Aadhaar verification, commission calculations, and payment tracking modules. Generated certificates using Node Canvas and automated SMS/WhatsApp communication workflows.",
+    image: "/images/attendance_mockup.png",
+    tech: ["Node Canvas", "Webhooks", "PostgreSQL", "Reporting"],
+    features: [
+      "Membership Management",
+      "Aadhaar Verification",
+      "Commission Calculations",
+      "Payment Tracking",
+      "Automated Certificates",
+      "SMS/WhatsApp Workflows"
+    ],
+    challenge: "Managing a large-scale trust operation required strict verification processes, complex commission math, and automated communications.",
+    solution: "Engineered automated administration modules, leveraging Node Canvas for real-time certificate generation and integrating third-party messaging services.",
+    results: "Streamlined trust operations, significantly reducing manual verification time and improving member communication reliability."
+  },
+  {
+    title: "Tally-Integrated Accounting",
+    subtitle: "Custom transactional ledger syncing branch databases with Tally ERP.",
+    description: "Developed Laravel-based accounting software integrated with Tally ERP. Automated voucher creation, reconciliation workflows, and accounting processes. Optimized financial reporting and transaction management modules.",
+    image: "/images/erp_mockup.png",
+    tech: ["Laravel", "Tally ERP", "MySQL", "REST APIs"],
+    features: [
+      "Automated Voucher Creation",
+      "Tally ERP Integration",
+      "Reconciliation Workflows",
+      "Financial Reporting",
+      "Transaction Management",
+      "Automated Accounting"
+    ],
+    challenge: "Accounting departments wasted hours manual-keying invoices, leading to entry discrepancies and slow reconciliation cycles.",
+    solution: "Developed an API-driven Laravel service that compiles MySQL transaction audits and synchronizes directly with Tally ERP.",
+    results: "Bypassed manual entry loops, reducing manual workflows and shortening ledger reconciliation time drastically."
   }
 ];
 
@@ -1028,14 +1046,14 @@ export default function Home() {
               <div className="space-y-4 max-w-sm">
                 <Magnetic range={35} strength={0.2}>
                   <a 
-                    href="mailto:yashvishah917@gmail.com"
-                    aria-label="Send email to Yashvi Shah directly at yashvishah917@gmail.com"
+                    href="mailto:yashvishah991@gmail.com"
+                    aria-label="Send email to Yashvi Shah directly at yashvishah991@gmail.com"
                     className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
                   >
                     <Mail className="h-5 w-5 text-primary group-hover:scale-110 transition-transform duration-300" />
                     <div>
                       <span className="block text-[10px] text-muted-text font-mono font-bold leading-none mb-1">EMAIL ME DIRECTLY</span>
-                      <span className="text-sm font-semibold text-white">yashvishah917@gmail.com</span>
+                      <span className="text-sm font-semibold text-white">yashvishah991@gmail.com</span>
                     </div>
                   </a>
                 </Magnetic>
@@ -1074,7 +1092,7 @@ export default function Home() {
 
                   <Magnetic range={30} strength={0.2}>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/yashvi-shah-3a1915174" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       aria-label="Visit Yashvi Shah's LinkedIn profile"
