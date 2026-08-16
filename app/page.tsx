@@ -15,236 +15,32 @@ import { TiltCard } from "@/components/ui/tilt-card";
 import { ProjectModal } from "@/components/ui/project-modal";
 import { ExperienceTimeline } from "@/components/sections/experience-timeline";
 
+import { PERSONAL_INFO, PROFESSIONAL_SUMMARY, SKILLS_CATEGORIES, EXPERIENCE as TIMELINE, PROJECTS, EDUCATION, STRENGTHS as STRENGTHS_DATA } from "@/data/portfolio";
+
 const STATS = [
   {
-    label: "Projects Completed",
-    value: 48,
-    suffix: "+",
-    icon: Briefcase,
-    color: "text-primary",
-    glow: "rgba(59, 130, 246, 0.15)"
-  },
-  {
     label: "Years Experience",
-    value: 5,
+    value: parseInt(PERSONAL_INFO.experience),
     suffix: "+",
     icon: Award,
     color: "text-secondary",
     glow: "rgba(139, 92, 246, 0.15)"
-  },
-  {
-    label: "Happy Clients",
-    value: 35,
-    suffix: "+",
-    icon: Users,
-    color: "text-emerald-500",
-    glow: "rgba(16, 185, 129, 0.15)"
-  },
-  {
-    label: "Technologies Mastered",
-    value: 15,
-    suffix: "+",
-    icon: Code2,
-    color: "text-amber-500",
-    glow: "rgba(245, 158, 11, 0.15)"
-  },
-];
-
-const TIMELINE = [
-  {
-    role: "Full-Stack Developer",
-    company: "CodExalters Techlabs",
-    duration: "Sept 2024 - Present",
-    description: "Developed enterprise CRM and business automation applications using Node.js, TypeScript, Angular, Next.js, and PostgreSQL. Designed secure REST APIs handling 30,000+ daily requests, improving application performance by 35%.",
-  },
-  {
-    role: "Laravel Developer",
-    company: "Latitude Technolabs Pvt. Ltd.",
-    duration: "Feb 2023 - June 2024",
-    description: "Developed and maintained accounting and business management applications. Integrated Tally ERP with custom accounting modules and automated voucher processing workflows, optimizing database queries for large transaction datasets.",
-  },
-  {
-    role: "PHP Developer",
-    company: "Eliencys",
-    duration: "May 2022 - Jan 2023",
-    description: "Developed and maintained Laravel and CodeIgniter applications for business process automation. Built REST APIs, authentication modules, and worked with MySQL databases and Angular-based frontend modules.",
-  },
-  {
-    role: "Junior PHP Developer",
-    company: "Sinon-Tech Pvt. Ltd.",
-    duration: "May 2021 - Apr 2022",
-    description: "Developed REST APIs, authentication modules, and business applications using PHP and MySQL. Assisted in database design, bug fixing, testing, and deployment activities for various features.",
-  },
-];
-
-const PROJECTS = [
-  {
-    title: "BizzPlus CRM & Real Estate CRM",
-    subtitle: "Multi-tenant CRM platform using Node.js, PostgreSQL, and Angular.",
-    description: "Built dynamic JSONB form builder, role-based access control (RBAC), audit logs, lead-property matching, and bulk operations. Implemented WhatsApp/Email automation, Facebook Lead Ads integration, queue jobs, cron jobs, PDF generation, and advanced reporting modules.",
-    image: "/images/crm_mockup.png",
-    tech: ["Node.js", "PostgreSQL", "Angular", "TypeScript"],
-    features: [
-      "Dynamic JSONB Form Builder",
-      "Lead-Property Matching",
-      "WhatsApp/Email Automation",
-      "Facebook Lead Ads Sync",
-      "Role-Based Access (RBAC)",
-      "Queue & Cron Jobs"
-    ],
-    challenge: "Enterprise clients needed a highly customizable, multi-tenant CRM capable of automated lead routing, extensive integrations, and complex data querying.",
-    solution: "Developed scalable REST APIs and optimized PostgreSQL queries for high-volume operations, featuring a dynamic JSONB architecture for custom forms.",
-    results: "Successfully scaled backend services to handle thousands of daily API requests, streamlining operations and communication workflows."
-  },
-  {
-    title: "AtHeal Hospital Management",
-    subtitle: "Comprehensive hospital workflow and scheduling platform.",
-    description: "Developed Admin, Doctor, Patient, and Appointment Management modules with secure role-based access control. Implemented doctor onboarding, notifications, analytics dashboards, and dynamic website forms.",
-    image: "/images/erp_mockup.png",
-    tech: ["REST APIs", "PostgreSQL", "React", "Node.js"],
-    features: [
-      "Role-Based Access Control",
-      "Doctor Onboarding Flow",
-      "Appointment Management",
-      "Analytics Dashboards",
-      "Dynamic Website Forms",
-      "Patient Notifications"
-    ],
-    challenge: "Healthcare facilities required a secure, centralized system to manage appointments, patient records, and doctor availability across web and mobile apps.",
-    solution: "Built scalable REST APIs consumed by multiple clients and designed highly optimized database workflows specifically tailored for healthcare operations.",
-    results: "Improved hospital administration efficiency by centralizing scheduling, data management, and automated notifications."
-  },
-  {
-    title: "Uthereal Platform",
-    subtitle: "Full-stack application engineered with Next.js frontend and backend.",
-    description: "Built authentication, dynamic forms, reporting modules, import/export functionality, and contact management features. Implemented API integrations, data validation, and business workflow automation.",
-    image: "/images/ecommerce_mockup.png",
-    tech: ["Next.js", "TypeScript", "TailwindCSS", "REST APIs"],
-    features: [
-      "Next.js Full-Stack App",
-      "Dynamic Form Handlers",
-      "Import/Export Modules",
-      "Contact Management",
-      "Workflow Automations",
-      "Responsive User Interface"
-    ],
-    challenge: "The client needed a high-performance, SEO-friendly web platform with robust administrative tools and dynamic content management.",
-    solution: "Leveraged Next.js to develop a seamless full-stack application, ensuring optimized API integrations and rigorous data validation.",
-    results: "Achieved excellent application performance metrics and a highly responsive user experience across all devices."
-  },
-  {
-    title: "Shree Shubham Trust System",
-    subtitle: "Large-scale membership and administration management system.",
-    description: "Developed membership management, Aadhaar verification, commission calculations, and payment tracking modules. Generated certificates using Node Canvas and automated SMS/WhatsApp communication workflows.",
-    image: "/images/attendance_mockup.png",
-    tech: ["Node Canvas", "Webhooks", "PostgreSQL", "Reporting"],
-    features: [
-      "Membership Management",
-      "Aadhaar Verification",
-      "Commission Calculations",
-      "Payment Tracking",
-      "Automated Certificates",
-      "SMS/WhatsApp Workflows"
-    ],
-    challenge: "Managing a large-scale trust operation required strict verification processes, complex commission math, and automated communications.",
-    solution: "Engineered automated administration modules, leveraging Node Canvas for real-time certificate generation and integrating third-party messaging services.",
-    results: "Streamlined trust operations, significantly reducing manual verification time and improving member communication reliability."
-  },
-  {
-    title: "Tally-Integrated Accounting",
-    subtitle: "Custom transactional ledger syncing branch databases with Tally ERP.",
-    description: "Developed Laravel-based accounting software integrated with Tally ERP. Automated voucher creation, reconciliation workflows, and accounting processes. Optimized financial reporting and transaction management modules.",
-    image: "/images/erp_mockup.png",
-    tech: ["Laravel", "Tally ERP", "MySQL", "REST APIs"],
-    features: [
-      "Automated Voucher Creation",
-      "Tally ERP Integration",
-      "Reconciliation Workflows",
-      "Financial Reporting",
-      "Transaction Management",
-      "Automated Accounting"
-    ],
-    challenge: "Accounting departments wasted hours manual-keying invoices, leading to entry discrepancies and slow reconciliation cycles.",
-    solution: "Developed an API-driven Laravel service that compiles MySQL transaction audits and synchronizes directly with Tally ERP.",
-    results: "Bypassed manual entry loops, reducing manual workflows and shortening ledger reconciliation time drastically."
   }
 ];
 
-const TESTIMONIALS = [
-  {
-    quote: "Yashvi rebuilt our inventory logic from the ground up. The gold-stone waste calculations are now 100% precise, saving us hours of manual logs.",
-    author: "Rajesh Mehta",
-    role: "Director, Mehta Jewellery Wholesale",
-    initials: "RM",
-    glow: "rgba(59, 130, 246, 0.1)"
-  },
-  {
-    quote: "The CRM platform automations Yashvi designed saved our sales team nearly 15 hours a week. Deal tracking is visual and closing rates have shot up.",
-    author: "Sarah Jenkins",
-    role: "VP of Sales, Apex Software",
-    initials: "SJ",
-    glow: "rgba(139, 92, 246, 0.1)"
-  },
-  {
-    quote: "Exceptional architecture competence. Deployed database row-locking configurations that resolved critical concurrency issues during flash sales.",
-    author: "Alex Rivera",
-    role: "CTO, Veloce Luxury Retail",
-    initials: "AR",
-    glow: "rgba(16, 185, 129, 0.1)"
-  },
-  {
-    quote: "Professional, clean code, and deep business understanding. Yashvi didn't just build an ERP; she modeled it around our actual financial workflows.",
-    author: "Vikram Shah",
-    role: "Founder, Shah Capital Group",
-    initials: "VS",
-    glow: "rgba(245, 158, 11, 0.1)"
-  }
-];
+const STRENGTHS = STRENGTHS_DATA.map((strength, index) => {
+  const icons = [Zap, Code2, TrendingUp, HeartHandshake, Box];
+  const colors = ["text-amber-500", "text-blue-500", "text-emerald-500", "text-rose-500", "text-purple-500"];
+  const bgs = ["rgba(245, 158, 11, 0.05)", "rgba(59, 130, 246, 0.05)", "rgba(16, 185, 129, 0.05)", "rgba(244, 63, 94, 0.05)", "rgba(168, 85, 247, 0.05)"];
+  
+  return {
+    ...strength,
+    icon: icons[index % icons.length],
+    color: colors[index % colors.length],
+    bg: bgs[index % bgs.length]
+  };
+});
 
-const STRENGTHS = [
-  {
-    title: "Fast Delivery",
-    description: "Rapid iteration cycles and automated deployments. I build modular systems that allow features to go live immediately.",
-    icon: Zap,
-    color: "text-amber-500",
-    bg: "rgba(245, 158, 11, 0.05)"
-  },
-  {
-    title: "Clean Code",
-    description: "Rigorous typing, strict lint rules, and comprehensive docs. Your team will inherit a maintainable codebase that compiles easily.",
-    icon: Code2,
-    color: "text-blue-500",
-    bg: "rgba(59, 130, 246, 0.05)"
-  },
-  {
-    title: "Business Understanding",
-    description: "I bridge product designs and complex engineering logic. I build workflows centered on user goals and revenue impact.",
-    icon: TrendingUp,
-    color: "text-emerald-500",
-    bg: "rgba(16, 185, 129, 0.05)"
-  },
-  {
-    title: "Long-Term Support",
-    description: "Strategic advisory and proactive maintenance. I provide scale maps, performance updates, and ongoing architectural audits.",
-    icon: HeartHandshake,
-    color: "text-rose-500",
-    bg: "rgba(244, 63, 94, 0.05)"
-  },
-  {
-    title: "Scalable Architecture",
-    description: "High concurrency handlers, Row-Level Security parameters, and caching systems. Deployed to absorb extreme spikes easily.",
-    icon: Box,
-    color: "text-purple-500",
-    bg: "rgba(168, 85, 247, 0.05)"
-  },
-  {
-    title: "Modern Tech Stack",
-    description: "Next.js routing, React server modules, database queries, and Edge functions. Built using the latest stable framework specifications.",
-    icon: Cpu,
-    color: "text-cyan-500",
-    bg: "rgba(6, 182, 212, 0.05)"
-  }
-];
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
@@ -299,7 +95,7 @@ export default function Home() {
             <div className="space-y-4">
               <ScrollReveal direction="up" delay={0.2}>
                 <h2 className="text-2xl md:text-3xl font-semibold text-muted-text">
-                  Hi, I'm <span className="text-white font-bold">Yashvi Shah</span>
+                  Hi, I'm <span className="text-white font-bold">{PERSONAL_INFO.name}</span>
                 </h2>
               </ScrollReveal>
 
@@ -307,7 +103,7 @@ export default function Home() {
                 <h1 className="text-sm font-semibold tracking-wide uppercase text-muted-text flex flex-wrap items-center gap-2">
                   A Passionate{" "}
                   <span className="text-primary font-bold">
-                    <TypingEffect phrases={["Full-Stack Developer", "Software Engineer", "Backend Developer"]} />
+                    <TypingEffect phrases={[PERSONAL_INFO.role, "Software Engineer", "Backend Developer"]} />
                   </span>
                 </h1>
               </ScrollReveal>
@@ -317,9 +113,8 @@ export default function Home() {
                   className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Building ERP Systems, CRM Platforms and{" "}
                   <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[size:200%] animate-gradient">
-                    Scalable Business Apps.
+                    {PERSONAL_INFO.tagline}
                   </span>
                 </h3>
               </ScrollReveal>
@@ -327,10 +122,10 @@ export default function Home() {
 
             <ScrollReveal direction="up" delay={0.5}>
               <p className="text-lg text-muted-text max-w-xl leading-relaxed">
-                Over 5 years of experience building enterprise web applications, designing robust RESTful APIs, securing authentication pipelines, and automating complex business processes.
+                Over {PERSONAL_INFO.experience} of experience building enterprise web applications, designing robust RESTful APIs, securing authentication pipelines, and automating complex business processes.
               </p>
               <div className="flex items-center gap-2 mt-4 text-sm font-medium text-muted-text bg-white/5 border border-white/10 w-fit px-4 py-2 rounded-full">
-                <span>📍 Ahmedabad, Gujarat, India</span>
+                <span>📍 {PERSONAL_INFO.location}</span>
                 <span className="w-1 h-1 rounded-full bg-white/30"></span>
                 <span>Open to Remote or Hybrid in Ahmedabad</span>
               </div>
@@ -491,11 +286,8 @@ export default function Home() {
                 >
                   Solving Complex Enterprise Problems with Code.
                 </h2>
-                <p className="text-base text-muted-text leading-relaxed">
-                  I am a full-stack developer and backend engineer with over 5 years of professional experience in building and scaling robust web applications. My core expertise centers on building bespoke RESTful APIs, Tally-integrated ERP systems, enterprise CRM platforms (featuring Realestate CRM & Lead Base CRM), and scalable databases.
-                </p>
-                <p className="text-base text-muted-text leading-relaxed">
-                  I take a business-first approach to software development, prioritizing database query speed optimizations, secure authentication protocols (JWT, OAuth, RBAC), and third-party API integrations that reduce manual operational workflows for clients.
+                <p className="text-base text-muted-text leading-relaxed whitespace-pre-line">
+                  {PROFESSIONAL_SUMMARY}
                 </p>
               </div>
             </ScrollReveal>
@@ -588,31 +380,17 @@ export default function Home() {
               </p>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.3}>
-              <div className="pt-4 space-y-4">
-                <div>
-                  <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">Languages & Frameworks</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {["TypeScript", "JavaScript", "PHP 8", "Node.js", "Laravel", "CodeIgniter", "Next.js", "Angular"].map(s => (
-                      <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
-                    ))}
+              <div className="pt-4 space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                {SKILLS_CATEGORIES.map((category) => (
+                  <div key={category.title}>
+                    <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">{category.title}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((s) => (
+                        <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">API, Data & Auth</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {["REST APIs", "GraphQL", "Webhooks", "JWT & RBAC", "PostgreSQL", "MySQL", "Redis", "Supabase"].map(s => (
-                      <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">Integrations & Tools</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {["Tally ERP", "Twilio / MSG91", "Stripe / PayPal", "Razorpay", "Chart.js", "PDFKit", "Git"].map(s => (
-                      <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>
@@ -785,77 +563,25 @@ export default function Home() {
             </ScrollReveal>
 
             <div className="relative border-l border-white/10 pl-6 ml-3 space-y-10">
-              <ScrollReveal direction="left" delay={0.1} className="relative">
-                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-primary bg-[#050505] flex items-center justify-center">
-                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                </div>
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h4 className="text-lg font-bold text-white leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
-                      M.Sc. (Computer Applications & IT)
-                    </h4>
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
-                      2018 - 2020
-                    </span>
+              {EDUCATION.map((edu, idx) => (
+                <ScrollReveal key={idx} direction="left" delay={0.1 * (idx + 1)} className="relative">
+                  <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-primary bg-[#050505] flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                   </div>
-                  <p className="text-xs font-bold text-primary">K.S. School of Business Management, Gujarat University</p>
-                  <p className="text-sm text-muted-text">Completed post-graduation degree with a secure score of 79%.</p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="left" delay={0.2} className="relative">
-                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-primary bg-[#050505] flex items-center justify-center">
-                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                </div>
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h4 className="text-lg font-bold text-white leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
-                      B.Sc. (Computer Applications & IT)
-                    </h4>
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
-                      2015 - 2018
-                    </span>
+                  <div className="space-y-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h4 className="text-lg font-bold text-white leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
+                        {edu.degree}
+                      </h4>
+                      <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
+                        {edu.year}
+                      </span>
+                    </div>
+                    <p className="text-xs font-bold text-primary">{edu.institution}</p>
+                    <p className="text-sm text-muted-text">Completed with a score of {edu.score}.</p>
                   </div>
-                  <p className="text-xs font-bold text-primary">K.S. School of Business Management, Gujarat University</p>
-                  <p className="text-sm text-muted-text">Completed undergraduate study with a final score of 72%.</p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="left" delay={0.3} className="relative">
-                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-white/10 bg-[#050505] flex items-center justify-center">
-                  <div className="h-1.5 w-1.5 rounded-full bg-white/30" />
-                </div>
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h4 className="text-lg font-semibold text-white/90 leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
-                      Higher Secondary Certificate (H.S.C.)
-                    </h4>
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
-                      2015
-                    </span>
-                  </div>
-                  <p className="text-xs font-bold text-muted-text/80">Navchetan High School, Gujarat Board</p>
-                  <p className="text-sm text-muted-text">Graduated high school focusing on Science streams with 83%.</p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="left" delay={0.4} className="relative">
-                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-white/10 bg-[#050505] flex items-center justify-center">
-                  <div className="h-1.5 w-1.5 rounded-full bg-white/30" />
-                </div>
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h4 className="text-lg font-semibold text-white/90 leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
-                      Secondary School Certificate (S.S.C.)
-                    </h4>
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
-                      2013
-                    </span>
-                  </div>
-                  <p className="text-xs font-bold text-muted-text/80">Navchetan High School, Gujarat Board</p>
-                  <p className="text-sm text-muted-text">Completed secondary studies with 76.5%.</p>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
 
@@ -929,60 +655,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Testimonials Section */}
-      <section id="testimonials" className="w-full py-24 border-t border-white/5 bg-[#050505] relative z-10 overflow-hidden">
-        {/* Ambient backlight */}
-        <div className="absolute right-1/4 top-1/2 w-[350px] h-[350px] glow-primary rounded-full opacity-10 blur-[120px] pointer-events-none" />
 
-        <ScrollReveal direction="up" className="max-w-7xl mx-auto px-6 md:px-12 mb-16 text-center md:text-left">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
-              Success Stories
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white" style={{ fontFamily: "var(--font-display)" }}>
-              Corporate Endorsements.
-            </h2>
-            <p className="text-muted-text max-w-xl text-sm">
-              Real testimonials from founders, CTOs, and product leads managing custom ERP & CRM implementations.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        {/* Sliding Infinite Testimonials Marquee wrapper */}
-        <div className="relative w-full overflow-hidden pause-hover select-none py-4">
-          {/* Edge fades gradient overlay */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
-
-          <div className="animate-marquee flex gap-6 px-4">
-            {[...TESTIMONIALS, ...TESTIMONIALS].map((test, idx) => (
-              <GlassCard
-                key={idx}
-                glowColor={test.glow}
-                borderColor="rgba(255, 255, 255, 0.05)"
-                className="w-[320px] md:w-[400px] flex-shrink-0 p-6 flex flex-col justify-between"
-              >
-                <p className="text-sm md:text-base text-muted-text italic leading-relaxed mb-6">
-                  &ldquo;{test.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-xs font-bold text-white shadow-md">
-                    {test.initials}
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white leading-none mb-1">
-                      {test.author}
-                    </h4>
-                    <p className="text-[10px] text-muted-text font-mono tracking-wide">
-                      {test.role}
-                    </p>
-                  </div>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Work With Me Section */}
       <section id="strengths" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
@@ -1074,22 +747,22 @@ export default function Home() {
               <div className="space-y-4 max-w-sm">
                 <Magnetic range={35} strength={0.2}>
                   <a
-                    href="mailto:yashvishah991@gmail.com"
-                    aria-label="Send email to Yashvi Shah directly at yashvishah991@gmail.com"
+                    href={`mailto:${PERSONAL_INFO.email}`}
+                    aria-label={`Send email to ${PERSONAL_INFO.name} directly at ${PERSONAL_INFO.email}`}
                     className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
                   >
                     <Mail className="h-5 w-5 text-primary group-hover:scale-110 transition-transform duration-300" />
                     <div>
                       <span className="block text-[10px] text-muted-text font-mono font-bold leading-none mb-1">EMAIL ME DIRECTLY</span>
-                      <span className="text-sm font-semibold text-white">yashvishah991@gmail.com</span>
+                      <span className="text-sm font-semibold text-white">{PERSONAL_INFO.email}</span>
                     </div>
                   </a>
                 </Magnetic>
 
                 <Magnetic range={35} strength={0.2}>
                   <a
-                    href="tel:+919106060400"
-                    aria-label="Call Yashvi Shah directly at +91 91060 60400"
+                    href={`tel:${PERSONAL_INFO.phone.replace(/[\s\+]/g, '')}`}
+                    aria-label={`Call ${PERSONAL_INFO.name} directly at ${PERSONAL_INFO.phone}`}
                     className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
                   >
                     <div className="h-5 w-5 flex items-center justify-center">
@@ -1099,7 +772,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="block text-[10px] text-muted-text font-mono font-bold leading-none mb-1">CALL ME DIRECTLY</span>
-                      <span className="text-sm font-semibold text-white">+91 91060 60400</span>
+                      <span className="text-sm font-semibold text-white">{PERSONAL_INFO.phone}</span>
                     </div>
                   </a>
                 </Magnetic>

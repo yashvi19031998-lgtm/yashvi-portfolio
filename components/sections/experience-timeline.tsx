@@ -5,44 +5,23 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Code, Users, Briefcase, BarChart3 } from "lucide-react";
 
-const MILESTONES = [
-  {
-    year: "2024 - Present",
-    title: "Full-Stack Developer",
-    subtitle: "CodExalters Techlabs",
-    description: "Developing Node.js REST APIs handling 30,000+ daily requests for a CRM platform. Built Angular and Next.js modules to improve screen loading efficiency by 35%. Enforces robust security patterns via JWT credentials and role-based permissions.",
-    icon: Code,
-    color: "from-blue-500 to-indigo-500",
-    glow: "rgba(59, 130, 246, 0.1)"
-  },
-  {
-    year: "2023 - 2024",
-    title: "Laravel Developer",
-    subtitle: "Latitude Technolabs Pvt. Ltd.",
-    description: "Developed enterprise Laravel accounting systems integrated with Tally ERP modules. Reduced manual transaction flows by 40% and improved automated ledger report compilation by 30% through optimized queries.",
-    icon: Users,
-    color: "from-cyan-500 to-blue-500",
-    glow: "rgba(6, 182, 212, 0.1)"
-  },
-  {
-    year: "2022 - 2023",
-    title: "PHP Developer",
-    subtitle: "Eliencys",
-    description: "Maintained mission-critical client systems utilizing Laravel and CodeIgniter architectures. Successfully designed and rolled out dynamic Angular dashboard features to enhance administrative workflows.",
-    icon: Briefcase,
-    color: "from-purple-500 to-secondary",
-    glow: "rgba(139, 92, 246, 0.1)"
-  },
-  {
-    year: "2021 - 2022",
-    title: "Junior PHP Developer",
-    subtitle: "Sinon-Tech Pvt. Ltd.",
-    description: "Assisted senior developers with relational database schema design, backend script writing, and query speed profiling. Integrated custom forms, reporting dashboards, and payment gateways.",
-    icon: BarChart3,
-    color: "from-emerald-500 to-teal-500",
-    glow: "rgba(16, 185, 129, 0.1)"
-  }
-];
+import { EXPERIENCE } from "@/data/portfolio";
+
+const MILESTONES = EXPERIENCE.map((exp, index) => {
+  const icons = [Code, Users, Briefcase, BarChart3];
+  const colors = ["from-blue-500 to-indigo-500", "from-cyan-500 to-blue-500", "from-purple-500 to-secondary", "from-emerald-500 to-teal-500"];
+  const glows = ["rgba(59, 130, 246, 0.1)", "rgba(6, 182, 212, 0.1)", "rgba(139, 92, 246, 0.1)", "rgba(16, 185, 129, 0.1)"];
+
+  return {
+    year: exp.duration,
+    title: exp.role,
+    subtitle: exp.company,
+    description: exp.description,
+    icon: icons[index % icons.length],
+    color: colors[index % colors.length],
+    glow: glows[index % glows.length]
+  };
+});
 
 export function ExperienceTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
