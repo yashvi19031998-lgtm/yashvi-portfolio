@@ -516,7 +516,7 @@ export default function Home() {
 
                   {/* CTA link to slide study drawer */}
                   <ScrollReveal direction="up" delay={0.4}>
-                    <div className="pt-4">
+                    <div className="pt-4 flex flex-wrap items-center gap-4">
                       <Magnetic range={35} strength={0.25}>
                         <button
                           onClick={() => setSelectedProject(project)}
@@ -526,6 +526,21 @@ export default function Home() {
                           <ArrowUpRight className="h-4 w-4" />
                         </button>
                       </Magnetic>
+
+                      {/* External Links */}
+                      {(project as any).links && ((project as any).links as any[]).map((link, idx) => (
+                        <Magnetic range={35} strength={0.25} key={idx}>
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white text-black px-6 text-sm font-semibold hover:bg-neutral-200 transition-all duration-300 cursor-pointer"
+                          >
+                            {link.label}
+                            <ArrowUpRight className="h-4 w-4" />
+                          </a>
+                        </Magnetic>
+                      ))}
                     </div>
                   </ScrollReveal>
                 </div>

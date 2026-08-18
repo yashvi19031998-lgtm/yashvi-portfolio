@@ -15,6 +15,7 @@ interface Project {
   challenge: string;
   solution: string;
   results: string;
+  links?: { label: string; url: string }[];
 }
 
 interface ProjectModalProps {
@@ -151,11 +152,21 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             {/* CTAs */}
-            <div className="pt-12 flex items-center gap-4">
-              <button className="h-11 px-6 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-100 hover:shadow-lg hover:shadow-white/10 transition-all duration-300 cursor-pointer flex items-center gap-2">
-                Launch Live Demo
-                <ArrowUpRight className="h-4 w-4" />
-              </button>
+            <div className="pt-12 flex flex-wrap items-center gap-4">
+              {project.links && project.links.length > 0 ? (
+                project.links.map((link, idx) => (
+                  <a
+                    key={idx}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-11 px-6 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-100 hover:shadow-lg hover:shadow-white/10 transition-all duration-300 cursor-pointer flex items-center gap-2"
+                  >
+                    {link.label}
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                ))
+              ) : null}
               <button
                 onClick={onClose}
                 className="h-11 px-6 rounded-full border border-white/10 bg-transparent text-white font-semibold text-sm hover:bg-white/5 transition-all duration-300 cursor-pointer"

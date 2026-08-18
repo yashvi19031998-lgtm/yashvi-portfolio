@@ -81,7 +81,7 @@ export const PROJECTS = [
     title: "BizzPlus CRM & Real Estate Platform",
     subtitle: "Node.js, PostgreSQL, Angular, REST APIs, JSONB",
     description: "Developed a multi-tenant CRM tailored for the real estate sector, enabling isolated data management. Built a dynamic form builder and integrated strict role-based access control along with audit logging. Created an automated lead-property matching algorithm and supported bulk data operations. Implemented communication automations using WhatsApp, Email, and Facebook Lead Ads.",
-    image: "/images/crm_mockup.png", // Using the existing image placeholder
+    image: "/images/realpluscrm.png",
     tech: ["Node.js", "PostgreSQL", "Angular", "REST APIs", "JSONB"],
     features: [
       "Multi-tenant Architecture",
@@ -93,7 +93,11 @@ export const PROJECTS = [
     ],
     challenge: "Managing multi-tenant data securely while handling automated lead-property matching operations.",
     solution: "Designed isolated data architecture with strict RBAC, and implemented a matching algorithm backed by JSONB fields.",
-    results: "Enabled scalable CRM deployment for real estate agents with streamlined lead management and automation."
+    results: "Enabled scalable CRM deployment for real estate agents with streamlined lead management and automation.",
+    links: [
+      { label: "Web Link", url: "https://realpluscrm.com/" },
+      { label: "App Link", url: "https://play.google.com/store/apps/details?id=com.app.realplus.crm&hl=en_IN" }
+    ]
   },
   {
     title: "AtHeal Hospital Management System",
@@ -114,28 +118,32 @@ export const PROJECTS = [
     results: "Delivered a comprehensive and reliable administration system for hospital workflows."
   },
   {
-    title: "Uthereal Platform (Next.js)",
-    subtitle: "Next.js, Frontend & Backend Development, API Integrations",
-    description: "Developed a full-stack web application leveraging Next.js for client-side and server-side logic. Built user authentication pipelines, interactive forms, and comprehensive contact management features. Implemented flexible data import/export modules and integrated automated business workflows. Improved application performance and responsive design for a better user experience.",
-    image: "/images/ecommerce_mockup.png",
-    tech: ["Next.js", "Frontend", "Backend", "API Integrations"],
+    title: "JITO Matrimony Platform",
+    subtitle: "High-Traffic Matrimonial Application & Admin Panel",
+    description: "Developed a scalable matrimonial platform serving over 10,000+ active users. Engineered advanced matchmaking algorithms, secure profile verification workflows, and a comprehensive admin panel for community management. Integrated real-time notifications and payment gateways for premium memberships.",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://jitomatrimony.in/",
+    tech: ["Node.js", "PostgreSQL", "REST APIs", "Payment Integrations"],
     features: [
-      "Full-stack Next.js App",
-      "Authentication Pipelines",
-      "Interactive Forms",
-      "Contact Management",
-      "Data Import/Export",
-      "Automated Workflows"
+      "Advanced Matchmaking",
+      "Profile Verification",
+      "Admin Dashboard",
+      "Real-time Chat",
+      "Premium Memberships",
+      "Payment Gateway"
     ],
-    challenge: "Creating a high-performance full-stack application with complex interactive forms and workflow automation.",
-    solution: "Leveraged Next.js capabilities for both client and server-side logic to ensure seamless data flow and performance.",
-    results: "Improved application performance and responsive design, delivering a superior user experience."
+    challenge: "Building a scalable matchmaking engine capable of handling high-volume traffic and complex search filters securely.",
+    solution: "Implemented optimized database indexing and robust REST APIs to ensure fast and accurate profile recommendations.",
+    results: "Successfully launched with 10,000+ app downloads, creating a reliable and secure matrimonial ecosystem.",
+    links: [
+      { label: "Web Link", url: "https://jitomatrimony.in/" },
+      { label: "App Link", url: "https://play.google.com/store/apps/details?id=io.jito.jmap&pcampaignid=web_share" }
+    ]
   },
   {
     title: "Shree Shubham Trust Management System",
     subtitle: "Node.js, Node Canvas, SMS/WhatsApp Automations",
     description: "Built an end-to-end system featuring membership administration, Aadhaar verification, and payment tracking. Developed financial logic for commission calculations across large-scale trust operations. Implemented automated certificate generation using Node Canvas to dynamically render documents. Integrated SMS and WhatsApp pipelines to trigger instant notifications for trust members.",
-    image: "/images/attendance_mockup.png",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://app.shubhamtrust.com/login",
     tech: ["Node.js", "Node Canvas", "SMS/WhatsApp", "PostgreSQL"],
     features: [
       "Membership Administration",
@@ -147,7 +155,11 @@ export const PROJECTS = [
     ],
     challenge: "Managing large-scale trust operations with complex commission calculations and dynamic document rendering.",
     solution: "Engineered scalable financial logic and utilized Node Canvas for fast, dynamic certificate generation.",
-    results: "Streamlined administration and membership communication with automated SMS and WhatsApp pipelines."
+    results: "Streamlined administration and membership communication with automated SMS and WhatsApp pipelines.",
+    links: [
+      { label: "Web Link", url: "https://app.shubhamtrust.com/login" },
+      { label: "App Link", url: "https://play.google.com/store/apps/details?id=com.app.shubhamtrust&hl=en_IN" }
+    ]
   }
 ];
 
