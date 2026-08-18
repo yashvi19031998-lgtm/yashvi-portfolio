@@ -10,7 +10,9 @@ export const PERSONAL_INFO = {
   cta: "Let's talk.",
 };
 
-export const PROFESSIONAL_SUMMARY = `I'm a Full-Stack Developer with over 5 years of experience building web applications. I specialize in Node.js, TypeScript, Next.js, and PostgreSQL. I focus on writing clean, maintainable code to solve real business problems, whether that's building secure APIs, optimizing databases, or developing complete internal tools and CRM platforms.`;
+export const PROFESSIONAL_SUMMARY = `I am a Senior Full-Stack Engineer with over 5 years of specialized experience in designing, developing, and scaling enterprise-grade web applications. My technical foundation spans across the modern JavaScript ecosystem (Node.js, TypeScript, Next.js) and robust backend architectures (Laravel, PostgreSQL).
+
+Throughout my career, I have successfully engineered high-availability REST APIs, complex multi-tenant SaaS platforms, and secure workflow automations. I am deeply focused on writing clean, maintainable code, optimizing database performance for high-volume transactions, and delivering reliable software architectures that drive measurable business value.`;
 
 export const SKILLS_CATEGORIES = [
   {

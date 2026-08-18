@@ -166,7 +166,7 @@ export default function Home() {
                 <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary/30 to-secondary/30 blur-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Rotating Gradient Border Wrapper */}
-                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full p-[3px] bg-gradient-to-tr from-primary via-secondary to-primary bg-[size:200%] animate-[spin_8s_linear_infinite]">
+                <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full p-[3px] bg-gradient-to-tr from-primary via-secondary to-primary bg-[size:200%]">
                   {/* Mask / Inner Container */}
                   <div className="w-full h-full rounded-full bg-background overflow-hidden p-2">
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-secondary-bg">
@@ -174,18 +174,12 @@ export default function Home() {
                         src="/images/yashvi-image-2.png"
                         alt="Yashvi Shah Profile Avatar"
                         fill
-                        sizes="(max-width: 768px) 288px, 320px"
+                        sizes="(max-width: 768px) 320px, 384px"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         preload={true}
                       />
                     </div>
                   </div>
-                </div>
-
-                {/* Floating Micro-Badge Branding */}
-                <div className="absolute -bottom-4 right-4 bg-card-bg/80 backdrop-blur-xl border border-card-border px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-mono font-bold tracking-wider uppercase text-foreground">Shah.dev</span>
                 </div>
               </motion.div>
             </ScrollReveal>
