@@ -44,7 +44,7 @@ export function TypingEffect({
   }, [currentText, isDeleting, phraseIndex, phrases, typingSpeed, deletingSpeed, delayBetween]);
 
   return (
-    <span className="inline-flex items-center text-white">
+    <span className="inline-flex items-center">
       <span>{currentText}</span>
       <span className="w-[2px] h-[0.9em] ml-1.5 bg-primary animate-[pulse_1s_infinite] inline-block rounded-full" />
     </span>

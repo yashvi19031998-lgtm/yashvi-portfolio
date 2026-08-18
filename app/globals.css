@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --secondary-bg: #0F0F0F;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.06);
-  --primary: #3B82F6;
-  --secondary: #8B5CF6;
-  --foreground: #FFFFFF;
-  --muted: #A1A1AA;
+  --background: #0B1120;
+  --secondary-bg: #111827;
+  --card-bg: #151E2E;
+  --card-border: #1E293B;
+  --primary: #38BDF8;
+  --secondary: #6366F1;
+  --foreground: #F8FAFC;
+  --muted: #94A3B8;
   
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
@@ -36,7 +36,7 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
@@ -48,8 +48,8 @@
 
 /* Selection Color */
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
-  color: #ffffff;
+  background: rgba(56, 189, 248, 0.3);
+  color: var(--foreground);
 }
 
 body {
@@ -66,30 +66,29 @@ body {
 .bg-grid-pattern {
   background-size: 60px 60px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
   background-size: 30px 30px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
 /* Premium Glassmorphic Cards */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Ambient Radial Glow Gradients */
 .glow-primary {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
 }
 
 .glow-secondary {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
 }
 
 /* Custom Utilities */
@@ -139,10 +138,10 @@ body {
 
 /* Animated Gradient Mesh Background */
 .bg-mesh-gradient {
-  background: radial-gradient(at 20% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-              radial-gradient(at 80% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-              radial-gradient(at 40% 80%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
-              radial-gradient(at 80% 80%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
+  background: radial-gradient(at 20% 20%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+              radial-gradient(at 80% 20%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+              radial-gradient(at 40% 80%, rgba(56, 189, 248, 0.05) 0px, transparent 50%),
+              radial-gradient(at 80% 80%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
   background-size: 200% 200%;
   animation: mesh-shift 25s ease infinite alternate;
   will-change: background-position;
@@ -156,6 +155,6 @@ body {
 
 /* Accessibility Keyboard Focus Styles */
 *:focus-visible {
-  outline: 2px solid #3B82F6 !important;
+  outline: 2px solid var(--primary) !important;
   outline-offset: 3px !important;
 }

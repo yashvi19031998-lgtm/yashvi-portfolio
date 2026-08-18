@@ -3,43 +3,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Briefcase, Award, Users, Code2, Zap, TrendingUp, HeartHandshake, Box, Cpu, Mail } from "lucide-react";
+import { ArrowUpRight, Briefcase, Users, Cpu, Mail } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Magnetic } from "@/components/ui/magnetic";
 import { Particles } from "@/components/ui/particles";
 import { TypingEffect } from "@/components/ui/typing-effect";
-import { StatCounter } from "@/components/ui/stat-counter";
 import { SkillsOrbit } from "@/components/sections/skills-orbit";
 import { TiltCard } from "@/components/ui/tilt-card";
 import { ProjectModal } from "@/components/ui/project-modal";
 import { ExperienceTimeline } from "@/components/sections/experience-timeline";
 
-import { PERSONAL_INFO, PROFESSIONAL_SUMMARY, SKILLS_CATEGORIES, EXPERIENCE as TIMELINE, PROJECTS, EDUCATION, STRENGTHS as STRENGTHS_DATA } from "@/data/portfolio";
+import { PERSONAL_INFO, PROFESSIONAL_SUMMARY, SKILLS_CATEGORIES, EXPERIENCE as TIMELINE, PROJECTS, EDUCATION } from "@/data/portfolio";
 
-const STATS = [
-  {
-    label: "Years Experience",
-    value: parseInt(PERSONAL_INFO.experience),
-    suffix: "+",
-    icon: Award,
-    color: "text-secondary",
-    glow: "rgba(139, 92, 246, 0.15)"
-  }
-];
 
-const STRENGTHS = STRENGTHS_DATA.map((strength, index) => {
-  const icons = [Zap, Code2, TrendingUp, HeartHandshake, Box];
-  const colors = ["text-amber-500", "text-blue-500", "text-emerald-500", "text-rose-500", "text-purple-500"];
-  const bgs = ["rgba(245, 158, 11, 0.05)", "rgba(59, 130, 246, 0.05)", "rgba(16, 185, 129, 0.05)", "rgba(244, 63, 94, 0.05)", "rgba(168, 85, 247, 0.05)"];
-  
-  return {
-    ...strength,
-    icon: icons[index % icons.length],
-    color: colors[index % colors.length],
-    bg: bgs[index % bgs.length]
-  };
-});
 
 
 export default function Home() {
@@ -113,13 +90,12 @@ export default function Home() {
             <div className="space-y-4">
               <ScrollReveal direction="up" delay={0.2}>
                 <h2 className="text-2xl md:text-3xl font-semibold text-muted-text">
-                  Hi, I'm <span className="text-white font-bold">{PERSONAL_INFO.name}</span>
+                  Hi, I'm <span className="text-foreground font-bold">{PERSONAL_INFO.name}</span>
                 </h2>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.3}>
-                <h1 className="text-sm font-semibold tracking-wide uppercase text-muted-text flex flex-wrap items-center gap-2">
-                  A Passionate{" "}
+                <h1 className="text-lg font-semibold tracking-wide uppercase text-muted-text flex flex-wrap items-center gap-2">
                   <span className="text-primary font-bold">
                     <TypingEffect phrases={[PERSONAL_INFO.role, "Software Engineer", "Backend Developer"]} />
                   </span>
@@ -128,7 +104,7 @@ export default function Home() {
 
               <ScrollReveal direction="up" delay={0.4}>
                 <h3
-                  className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05]"
+                  className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.05]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[size:200%] animate-gradient">
@@ -142,9 +118,9 @@ export default function Home() {
               <p className="text-lg text-muted-text max-w-xl leading-relaxed">
                 Over {PERSONAL_INFO.experience} of experience building enterprise web applications, designing robust RESTful APIs, securing authentication pipelines, and automating complex business processes.
               </p>
-              <div className="flex items-center gap-2 mt-4 text-sm font-medium text-muted-text bg-white/5 border border-white/10 w-fit px-4 py-2 rounded-full">
+              <div className="flex items-center gap-2 mt-4 text-sm font-medium text-muted-text bg-card-bg border border-card-border w-fit px-4 py-2 rounded-full">
                 <span>📍 {PERSONAL_INFO.location}</span>
-                <span className="w-1 h-1 rounded-full bg-white/30"></span>
+                <span className="w-1 h-1 rounded-full bg-muted-text/30"></span>
                 <span>Open to Remote or Hybrid in Ahmedabad</span>
               </div>
             </ScrollReveal>
@@ -155,7 +131,7 @@ export default function Home() {
                 <Magnetic range={45} strength={0.2}>
                   <a
                     href="#projects"
-                    className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-sm font-semibold text-black transition-all duration-300 hover:bg-neutral-100 hover:shadow-xl hover:shadow-white/10 cursor-pointer"
+                    className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-semibold text-background transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] cursor-pointer"
                   >
                     View Projects
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -165,7 +141,7 @@ export default function Home() {
                 <Magnetic range={45} strength={0.2}>
                   <a
                     href="#contact"
-                    className="inline-flex h-12 px-8 rounded-full border border-white/10 bg-[#0F0F0F]/50 text-white font-semibold text-sm hover:bg-white/5 transition-all duration-300 cursor-pointer items-center"
+                    className="inline-flex h-12 px-8 rounded-full border border-primary bg-transparent text-primary font-semibold text-sm hover:bg-primary/10 transition-all duration-300 cursor-pointer items-center"
                   >
                     Contact Me
                   </a>
@@ -195,7 +171,7 @@ export default function Home() {
                   <div className="w-full h-full rounded-full bg-background overflow-hidden p-2">
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-secondary-bg">
                       <Image
-                        src="/images/profile.png"
+                        src="/images/yashvi-image-2.png"
                         alt="Yashvi Shah Profile Avatar"
                         fill
                         sizes="(max-width: 768px) 288px, 320px"
@@ -207,9 +183,9 @@ export default function Home() {
                 </div>
 
                 {/* Floating Micro-Badge Branding */}
-                <div className="absolute -bottom-4 right-4 bg-black/80 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2">
+                <div className="absolute -bottom-4 right-4 bg-card-bg/80 backdrop-blur-xl border border-card-border px-4 py-2 rounded-xl shadow-2xl flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-mono font-bold tracking-wider uppercase">Shah.dev</span>
+                  <span className="text-xs font-mono font-bold tracking-wider uppercase text-foreground">Shah.dev</span>
                 </div>
               </motion.div>
             </ScrollReveal>
@@ -218,226 +194,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="w-full max-w-7xl px-6 md:px-12 py-16 border-t border-white/5 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {STATS.map((stat, i) => {
-            const Icon = stat.icon;
-            return (
-              <ScrollReveal key={stat.label} direction="up" delay={i * 0.1}>
-                <GlassCard
-                  glowColor={stat.glow}
-                  borderColor="rgba(255, 255, 255, 0.08)"
-                  className="flex flex-col justify-between p-6 h-40 hover:shadow-2xl transition-all duration-500"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono text-muted-text uppercase tracking-widest">
-                      Stat 0{i + 1}
-                    </span>
-                    <Icon className={`h-5 w-5 ${stat.color} opacity-80`} />
-                  </div>
-                  <div>
-                    <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-1">
-                      <StatCounter value={stat.value} suffix={stat.suffix} />
-                    </div>
-                    <p className="text-xs text-muted-text font-medium uppercase tracking-wider">
-                      {stat.label}
-                    </p>
-                  </div>
-                </GlassCard>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-      </section>
-
       {/* About Me Section */}
-      <section id="about" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-          {/* Left Side: Workspace Image and Animated Badges */}
-          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
-            <ScrollReveal direction="left">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0F0F0F]/50 p-3 shadow-2xl">
-                {/* Accent lighting border glow */}
-                <div className="absolute -inset-1 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-60 pointer-events-none" />
-
-                <div className="relative aspect-video lg:aspect-square rounded-xl overflow-hidden bg-secondary-bg">
-                  <Image
-                    src="/images/workspace.png"
-                    alt="Yashvi Shah Workspace Desk Mockup"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Core Capability Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <ScrollReveal direction="left" delay={0.1}>
-                <div className="p-4 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl">
-                  <span className="text-[10px] text-primary font-mono font-bold tracking-wider block mb-1">CORE SPECIALTY</span>
-                  <span className="text-sm font-semibold text-white">ERP Architectures</span>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal direction="left" delay={0.2}>
-                <div className="p-4 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl">
-                  <span className="text-[10px] text-secondary font-mono font-bold tracking-wider block mb-1">DATABASES</span>
-                  <span className="text-sm font-semibold text-white">High Scalability</span>
-                </div>
-              </ScrollReveal>
-            </div>
+      <section id="about" className="w-full max-w-4xl mx-auto px-6 md:px-12 py-20 border-t border-card-border relative z-10 text-center">
+        <ScrollReveal direction="up">
+          <div className="space-y-6">
+            <h2
+              className="text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              About Me
+            </h2>
+            <p className="text-lg md:text-xl text-muted-text leading-relaxed whitespace-pre-line">
+              {PROFESSIONAL_SUMMARY}
+            </p>
           </div>
-
-          {/* Right Side: Narrative and Interactive Timeline */}
-          <div className="lg:col-span-7 space-y-12">
-            <ScrollReveal direction="right">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
-                  My Story
-                </div>
-                <h2
-                  className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Solving Complex Enterprise Problems with Code.
-                </h2>
-                <p className="text-base text-muted-text leading-relaxed whitespace-pre-line">
-                  {PROFESSIONAL_SUMMARY}
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Expertise Highlights Grid */}
-            <div className="space-y-4">
-              <ScrollReveal direction="right" delay={0.1}>
-                <h3 className="text-xs font-mono uppercase tracking-widest text-white mb-4">Expertise Focus</h3>
-              </ScrollReveal>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <ScrollReveal direction="right" delay={0.15}>
-                  <GlassCard className="p-5">
-                    <h4 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                      ERP & Operational Logic
-                    </h4>
-                    <p className="text-xs text-muted-text leading-relaxed">
-                      Designing ledger accounts, supply chain pipelines, inventory automations, and secure corporate permissions systems.
-                    </p>
-                  </GlassCard>
-                </ScrollReveal>
-                <ScrollReveal direction="right" delay={0.2}>
-                  <GlassCard className="p-5">
-                    <h4 className="font-semibold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                      Enterprise CRM Platforms
-                    </h4>
-                    <p className="text-xs text-muted-text leading-relaxed">
-                      Connecting omnichannel user communications, automated billing funnels, lead scoring engines, and dashboard analytics.
-                    </p>
-                  </GlassCard>
-                </ScrollReveal>
-              </div>
-            </div>
-
-            {/* Vertical Career Timeline */}
-            <div className="space-y-8 pt-4">
-              <ScrollReveal direction="right" delay={0.1}>
-                <h3 className="text-xs font-mono uppercase tracking-widest text-white">Milestone Journey</h3>
-              </ScrollReveal>
-
-              <div className="relative border-l border-white/10 pl-6 ml-3 space-y-10">
-                {TIMELINE.map((item, idx) => (
-                  <ScrollReveal key={item.role} direction="right" delay={idx * 0.1} className="relative">
-                    {/* Timeline dot indicator */}
-                    <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-primary bg-[#050505] flex items-center justify-center">
-                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <h4 className="text-lg font-bold text-white leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                          {item.role}
-                        </h4>
-                        <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
-                          {item.duration}
-                        </span>
-                      </div>
-                      <p className="text-xs font-bold text-primary">{item.company}</p>
-                      <p className="text-sm text-muted-text leading-relaxed">{item.description}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10 overflow-hidden">
+      <section id="skills" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-card-border relative z-10 overflow-hidden">
         {/* Ambient backlight glow */}
         <div className="absolute right-0 bottom-0 w-[400px] h-[400px] glow-primary rounded-full opacity-10 blur-[100px] pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-          {/* Left Side: Skills Introduction Copy */}
-          <div className="lg:col-span-5 space-y-6">
-            <ScrollReveal direction="left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs font-semibold tracking-wide">
-                Interactive Stack
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="left" delay={0.1}>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                Futuristic & Core Tooling.
+        <div className="space-y-16">
+          {/* Header */}
+          <div className="space-y-6 text-center max-w-3xl mx-auto">
+            <ScrollReveal direction="up" delay={0.1}>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+                Skills & Technologies
               </h2>
             </ScrollReveal>
-            <ScrollReveal direction="left" delay={0.2}>
-              <p className="text-base text-muted-text leading-relaxed">
-                A preview of technologies and frameworks configured within my current engineering system. Core architectures (inner circle) drive rapid development loops, while auxiliary microservices and APIs (outer circle) ensure robust data routing and integrity.
+            <ScrollReveal direction="up" delay={0.2}>
+              <p className="text-lg text-foreground/90 leading-relaxed max-w-2xl mx-auto">
+                The core tools, languages, and frameworks I use to build robust applications.
               </p>
             </ScrollReveal>
-            <ScrollReveal direction="left" delay={0.3}>
-              <div className="pt-4 space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                {SKILLS_CATEGORIES.map((category) => (
-                  <div key={category.title}>
-                    <h4 className="text-xs font-mono text-white mb-2 uppercase tracking-wider">{category.title}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((s) => (
-                        <span key={s} className="px-2 py-1 text-[10px] font-mono text-muted-text border border-white/10 rounded-md bg-white/5">{s}</span>
-                      ))}
-                    </div>
+          </div>
+
+          {/* Full Grid for Skills */}
+          <ScrollReveal direction="up" delay={0.3}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {SKILLS_CATEGORIES.map((category) => (
+                <div key={category.title} className="p-6 rounded-2xl border border-card-border bg-card-bg shadow-sm hover:shadow-[0_0_15px_rgba(56,189,248,0.1)] hover:border-primary/50 hover:-translate-y-1 transition-all duration-300">
+                  <h4 className="text-base md:text-lg font-mono text-foreground font-extrabold mb-4 uppercase tracking-wider">{category.title}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((s) => (
+                      <span key={s} className="px-3 py-1.5 text-[11px] font-mono text-primary font-semibold border border-primary/20 rounded-md bg-primary/10 hover:bg-primary hover:text-background transition-colors uppercase tracking-wider">
+                        {s}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Right Side: Interactive Orbit Component Container */}
-          <div className="lg:col-span-7 flex justify-center items-center py-8">
-            <ScrollReveal direction="none" delay={0.2}>
-              <SkillsOrbit />
-            </ScrollReveal>
-          </div>
-
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
-      </section>
+      </section >
 
       {/* Featured Projects Section */}
-      <section id="projects" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
+      < section id="projects" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-card-border relative z-10" >
         <ScrollReveal direction="up">
           <div className="space-y-4 mb-20 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
-              Case Studies
-            </div>
             <h2
-              className="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
+              className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Enterprise Architectures
+              My Work
             </h2>
             <p className="text-muted-text max-w-xl text-base">
-              A detailed inspection of custom business applications, transactional ERP logic, and scalable full-stack integrations.
+              A selection of featured projects, showcasing custom business applications and full-stack integrations.
             </p>
           </div>
         </ScrollReveal>
@@ -454,7 +279,7 @@ export default function Home() {
                 {/* Product Interface Card (Large Screenshot with Tilt) */}
                 <div className={`lg:col-span-6 ${isEven ? "order-1" : "order-1 lg:order-2"}`}>
                   <ScrollReveal direction={isEven ? "left" : "right"}>
-                    <TiltCard className="relative overflow-hidden rounded-2xl border border-white/5 bg-card-bg/20 p-2 shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+                    <TiltCard className="relative overflow-hidden rounded-2xl border border-card-border bg-card-bg p-2 shadow-2xl hover:shadow-[0_0_15px_rgba(56,189,248,0.15)] transition-all duration-300">
                       <div className="absolute -inset-1 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-2xl blur-xl opacity-60 pointer-events-none" />
                       <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-secondary-bg">
                         <Image
@@ -474,7 +299,7 @@ export default function Home() {
                   <ScrollReveal direction="up" delay={0.1}>
                     <div className="space-y-4">
                       <h3
-                        className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-tight"
+                        className="text-2xl md:text-4xl font-bold text-foreground tracking-tight leading-tight"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {project.title}
@@ -493,7 +318,7 @@ export default function Home() {
                     <ul className="grid grid-cols-2 gap-2 text-xs text-muted-text font-semibold uppercase tracking-wider font-mono">
                       {project.features.slice(0, 4).map((feat) => (
                         <li key={feat} className="flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-secondary" />
+                          <span className="h-1 w-1 rounded-full bg-primary" />
                           {feat}
                         </li>
                       ))}
@@ -506,7 +331,7 @@ export default function Home() {
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="text-[10px] font-mono font-bold px-3 py-1 rounded-full bg-white/5 border border-white/5 text-muted-text uppercase tracking-wider"
+                          className="text-[10px] font-mono font-bold px-3 py-1 rounded-full bg-card-bg border border-card-border text-muted-text uppercase tracking-wider"
                         >
                           {t}
                         </span>
@@ -520,7 +345,7 @@ export default function Home() {
                       <Magnetic range={35} strength={0.25}>
                         <button
                           onClick={() => setSelectedProject(project)}
-                          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/10 bg-[#0F0F0F]/50 px-6 text-sm font-semibold text-white hover:bg-white/5 transition-all duration-300 cursor-pointer"
+                          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-primary bg-transparent px-6 text-sm font-semibold text-primary hover:bg-primary/10 transition-all duration-300 cursor-pointer"
                         >
                           View Case Study
                           <ArrowUpRight className="h-4 w-4" />
@@ -534,7 +359,7 @@ export default function Home() {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white text-black px-6 text-sm font-semibold hover:bg-neutral-200 transition-all duration-300 cursor-pointer"
+                            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-card-bg border border-card-border text-foreground px-6 text-sm font-semibold hover:bg-card-border transition-all duration-300 cursor-pointer hover:-translate-y-1"
                           >
                             {link.label}
                             <ArrowUpRight className="h-4 w-4" />
@@ -548,204 +373,65 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </section >
 
       {/* Experience Timeline Section */}
-      <section id="experience" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10 overflow-hidden">
+      < section id="experience" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-card-border relative z-10 overflow-hidden" >
         {/* Radial backing glow */}
-        <div className="absolute left-0 top-1/4 w-[400px] h-[400px] glow-secondary rounded-full opacity-10 blur-[100px] pointer-events-none" />
+        < div className="absolute left-0 top-1/4 w-[400px] h-[400px] glow-secondary rounded-full opacity-10 blur-[100px] pointer-events-none" />
 
         <ScrollReveal direction="up">
           <div className="space-y-4 mb-20 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs font-semibold tracking-wide">
-              Timeline
-            </div>
             <h2
-              className="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
+              className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Milestones & Journey
+              Experience
             </h2>
-            <p className="text-muted-text max-w-xl mx-auto text-base">
-              Visualizing the roadmap of software engineering, process automation, and full-scale enterprise ERP/CRM developments.
-            </p>
           </div>
         </ScrollReveal>
 
         <ExperienceTimeline />
-      </section>
+      </section >
 
       {/* Education & Academic history section */}
-      <section id="education" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      < section id="education" className="w-full max-w-4xl mx-auto px-6 md:px-12 py-24 border-t border-card-border relative z-10" >
+        <div className="space-y-12">
+          <ScrollReveal direction="up">
+            <div className="space-y-4 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground font-display" style={{ fontFamily: "var(--font-display)" }}>
+                Education
+              </h2>
+            </div>
+          </ScrollReveal>
 
-          {/* Left Side: Education timeline (M.Sc., B.Sc., H.S.C., S.S.C.) */}
-          <div className="lg:col-span-6 space-y-12">
-            <ScrollReveal direction="left">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold tracking-wide">
-                  Credentials
+          <div className="relative border-l border-card-border pl-6 ml-3 space-y-10">
+            {EDUCATION.map((edu, idx) => (
+              <ScrollReveal key={idx} direction="up" delay={0.1 * (idx + 1)} className="relative">
+                <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-primary bg-background flex items-center justify-center">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-display" style={{ fontFamily: "var(--font-display)" }}>
-                  Education & Academic Path
-                </h2>
-                <p className="text-base text-muted-text leading-relaxed">
-                  My structured educational milestones from Gujarat University and schools laying down robust foundations in computational logic, database models, algorithms, and application engineering.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="relative border-l border-white/10 pl-6 ml-3 space-y-10">
-              {EDUCATION.map((edu, idx) => (
-                <ScrollReveal key={idx} direction="left" delay={0.1 * (idx + 1)} className="relative">
-                  <div className="absolute -left-[31px] top-1.5 h-4 w-4 rounded-full border-2 border-primary bg-[#050505] flex items-center justify-center">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="text-lg font-bold text-white leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
-                        {edu.degree}
-                      </h4>
-                      <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/5 text-muted-text">
-                        {edu.year}
-                      </span>
-                    </div>
-                    <p className="text-xs font-bold text-primary">{edu.institution}</p>
-                    <p className="text-sm text-muted-text">Completed with a score of {edu.score}.</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side: Key Strengths & Traits (Resume strengths) */}
-          <div className="lg:col-span-6 space-y-12">
-            <ScrollReveal direction="right">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs font-semibold tracking-wide">
-                  Qualities
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-display" style={{ fontFamily: "var(--font-display)" }}>
-                  Strengths & Core Traits
-                </h2>
-                <p className="text-base text-muted-text leading-relaxed">
-                  Professional traits and work ethics that define my day-to-day engineering and enable seamless developer collaborations.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <ScrollReveal direction="right" delay={0.15}>
-                <GlassCard className="p-5 flex flex-col justify-between h-40">
-                  <span className="text-[10px] text-primary font-mono font-bold tracking-wider block mb-1">LEARNING</span>
-                  <h4 className="font-bold text-white mb-2 font-display" style={{ fontFamily: "var(--font-display)" }}>
-                    Quick & Adaptable
-                  </h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Proven ability to learn and adapt to new frameworks, backend APIs, and systems logic instantly.
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-
-              <ScrollReveal direction="right" delay={0.2}>
-                <GlassCard className="p-5 flex flex-col justify-between h-40">
-                  <span className="text-[10px] text-secondary font-mono font-bold tracking-wider block mb-1">ENGINEERING</span>
-                  <h4 className="font-bold text-white mb-2 font-display" style={{ fontFamily: "var(--font-display)" }}>
-                    Problem Solving
-                  </h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Highly analytical debugger diagnosing database bottlenecks and optimizing REST query structures.
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-
-              <ScrollReveal direction="right" delay={0.25}>
-                <GlassCard className="p-5 flex flex-col justify-between h-40">
-                  <span className="text-[10px] text-emerald-500 font-mono font-bold tracking-wider block mb-1">COMMUNICATION</span>
-                  <h4 className="font-bold text-white mb-2 font-display" style={{ fontFamily: "var(--font-display)" }}>
-                    Effective Teamwork
-                  </h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Collaborative team player aligning cleanly with Scrum masters, frontend developers, and product leads.
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-
-              <ScrollReveal direction="right" delay={0.3}>
-                <GlassCard className="p-5 flex flex-col justify-between h-40">
-                  <span className="text-[10px] text-amber-500 font-mono font-bold tracking-wider block mb-1">PUNCTUALITY</span>
-                  <h4 className="font-bold text-white mb-2 font-display" style={{ fontFamily: "var(--font-display)" }}>
-                    Deadline Driven
-                  </h4>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    Strict deadline management and structural priority setting ensuring timely and secure codebase updates.
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-
-      {/* Why Work With Me Section */}
-      <section id="strengths" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-white/5 relative z-10">
-        <ScrollReveal direction="up" className="mb-20 text-center">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 text-secondary text-xs font-semibold tracking-wide">
-              Value Proposition
-            </div>
-            <h2 className="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-              Why Work With Me.
-            </h2>
-            <p className="text-muted-text max-w-xl mx-auto text-base">
-              A commitment to engineering standards, robust logic patterns, and long-term partnership goals.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {STRENGTHS.map((strength, i) => {
-            const Icon = strength.icon;
-            return (
-              <ScrollReveal key={strength.title} direction="up" delay={i * 0.08}>
-                <GlassCard
-                  glowColor="rgba(255, 255, 255, 0.05)"
-                  borderColor="rgba(255, 255, 255, 0.05)"
-                  className="group hover:border-white/10 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col justify-between h-64"
-                >
-                  <div className="flex items-start justify-between">
-                    <div
-                      className="p-3 rounded-xl border border-white/5 transition-all duration-300 group-hover:scale-105"
-                      style={{ backgroundColor: strength.bg }}
-                    >
-                      <Icon className={`h-6 w-6 ${strength.color}`} />
-                    </div>
-                    <span className="text-[10px] font-mono text-muted-text font-bold">
-                      Val 0{i + 1}
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="text-lg font-bold text-foreground leading-tight font-display" style={{ fontFamily: "var(--font-display)" }}>
+                      {edu.degree}
+                    </h4>
+                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-card-bg border border-card-border text-muted-text">
+                      {edu.year}
                     </span>
                   </div>
-                  <div className="space-y-2 mt-4">
-                    <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-primary" style={{ fontFamily: "var(--font-display)" }}>
-                      {strength.title}
-                    </h3>
-                    <p className="text-xs text-muted-text leading-relaxed">
-                      {strength.description}
-                    </p>
-                  </div>
-                </GlassCard>
+                  <p className="text-xs font-bold text-primary">{edu.institution}</p>
+                </div>
               </ScrollReveal>
-            );
-          })}
+            ))}
+          </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact Section */}
-      <section id="contact" className="w-full py-28 border-t border-white/5 bg-mesh-gradient relative z-10 overflow-hidden">
+      < section id="contact" className="w-full py-28 border-t border-card-border bg-mesh-gradient relative z-10 overflow-hidden" >
         {/* Floating particles specific to contact background */}
-        <Particles quantity={30} />
+        < Particles quantity={30} />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
 
@@ -759,19 +445,16 @@ export default function Home() {
 
             <ScrollReveal direction="left" delay={0.1}>
               <h2
-                className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.05]"
+                className="text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.05]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Let's Build Something <br />
-                <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[size:200%] animate-gradient">
-                  Amazing Together.
-                </span>
+                Let's Work Together
               </h2>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.2}>
               <p className="text-base md:text-lg text-muted-text max-w-lg leading-relaxed">
-                Have a complex ERP system to deploy, a CRM funnel to automate, or need senior full-stack development consulting? Write me a message, or contact me directly through my social channels. Let's discuss your timelines.
+                Have a project in mind or need a senior full-stack developer? Write me a message, or contact me directly through my social channels.
               </p>
             </ScrollReveal>
 
@@ -782,12 +465,12 @@ export default function Home() {
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
                     aria-label={`Send email to ${PERSONAL_INFO.name} directly at ${PERSONAL_INFO.email}`}
-                    className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+                    className="flex items-center gap-3 px-5 py-3 rounded-xl border border-card-border bg-card-bg hover:border-primary/50 transition-all duration-300 group cursor-pointer"
                   >
                     <Mail className="h-5 w-5 text-primary group-hover:scale-110 transition-transform duration-300" />
                     <div>
                       <span className="block text-[10px] text-muted-text font-mono font-bold leading-none mb-1">EMAIL ME DIRECTLY</span>
-                      <span className="text-sm font-semibold text-white">{PERSONAL_INFO.email}</span>
+                      <span className="text-sm font-semibold text-foreground">{PERSONAL_INFO.email}</span>
                     </div>
                   </a>
                 </Magnetic>
@@ -796,7 +479,7 @@ export default function Home() {
                   <a
                     href={`tel:${PERSONAL_INFO.phone.replace(/[\s\+]/g, '')}`}
                     aria-label={`Call ${PERSONAL_INFO.name} directly at ${PERSONAL_INFO.phone}`}
-                    className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+                    className="flex items-center gap-3 px-5 py-3 rounded-xl border border-card-border bg-card-bg hover:border-primary/50 transition-all duration-300 group cursor-pointer"
                   >
                     <div className="h-5 w-5 flex items-center justify-center">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4.5 w-4.5 text-primary group-hover:scale-110 transition-transform duration-300">
@@ -805,7 +488,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="block text-[10px] text-muted-text font-mono font-bold leading-none mb-1">CALL ME DIRECTLY</span>
-                      <span className="text-sm font-semibold text-white">{PERSONAL_INFO.phone}</span>
+                      <span className="text-sm font-semibold text-foreground">{PERSONAL_INFO.phone}</span>
                     </div>
                   </a>
                 </Magnetic>
@@ -817,9 +500,9 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Chat with Yashvi Shah on WhatsApp at +91 91060 60400"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-emerald-500/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-white justify-center"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-card-border bg-card-bg hover:border-primary/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-foreground justify-center"
                     >
-                      <WhatsappIcon className="h-4.5 w-4.5 text-emerald-500 group-hover:rotate-12 transition-transform duration-300" />
+                      <WhatsappIcon className="h-4.5 w-4.5 text-primary group-hover:rotate-12 transition-transform duration-300" />
                       WhatsApp
                     </a>
                   </Magnetic>
@@ -830,23 +513,10 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Visit Yashvi Shah's LinkedIn profile"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-blue-500/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-white justify-center"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-card-border bg-card-bg hover:border-primary/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-foreground justify-center"
                     >
-                      <LinkedinIcon className="h-4.5 w-4.5 text-blue-500 group-hover:scale-105 transition-transform duration-300" />
+                      <LinkedinIcon className="h-4.5 w-4.5 text-primary group-hover:scale-105 transition-transform duration-300" />
                       LinkedIn
-                    </a>
-                  </Magnetic>
-
-                  <Magnetic range={30} strength={0.2}>
-                    <a
-                      href="https://github.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Visit Yashvi Shah's GitHub profile"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/5 bg-card-bg/40 backdrop-blur-xl hover:border-purple-500/50 transition-all duration-300 group cursor-pointer text-xs font-semibold text-white justify-center"
-                    >
-                      <GithubIcon className="h-4.5 w-4.5 text-purple-500 group-hover:scale-105 transition-transform duration-300" />
-                      GitHub
                     </a>
                   </Magnetic>
                 </div>
@@ -858,9 +528,9 @@ export default function Home() {
           <div className="lg:col-span-6">
             <ScrollReveal direction="right" delay={0.2}>
               <GlassCard
-                glowColor="rgba(139, 92, 246, 0.12)"
-                borderColor="rgba(255, 255, 255, 0.08)"
-                className="p-8 md:p-10 hover:border-white/10 hover:shadow-2xl transition-all duration-500"
+                glowColor="rgba(56, 189, 248, 0.12)"
+                borderColor="#1E293B"
+                className="p-8 md:p-10 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(56,189,248,0.1)] transition-all duration-500"
               >
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="space-y-2">
@@ -875,7 +545,7 @@ export default function Home() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="e.g. Vikram Mehta"
-                      className="w-full h-11 px-4 rounded-xl border border-white/10 bg-black/40 text-sm text-white placeholder-white/20 focus:border-primary/50 focus:outline-none transition-colors duration-300"
+                      className="w-full h-11 px-4 rounded-xl border border-card-border bg-background text-sm text-foreground placeholder-muted-text/50 focus:border-primary/50 focus:outline-none transition-colors duration-300"
                     />
                   </div>
 
@@ -891,7 +561,7 @@ export default function Home() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="e.g. vikram@mehtajewel.com"
-                      className="w-full h-11 px-4 rounded-xl border border-white/10 bg-black/40 text-sm text-white placeholder-white/20 focus:border-primary/50 focus:outline-none transition-colors duration-300"
+                      className="w-full h-11 px-4 rounded-xl border border-card-border bg-background text-sm text-foreground placeholder-muted-text/50 focus:border-primary/50 focus:outline-none transition-colors duration-300"
                     />
                   </div>
 
@@ -907,7 +577,7 @@ export default function Home() {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Describe the ERP module, CRM integration, or full-stack software requirements..."
-                      className="w-full p-4 rounded-xl border border-white/10 bg-black/40 text-sm text-white placeholder-white/20 focus:border-primary/50 focus:outline-none transition-colors duration-300 resize-none"
+                      className="w-full p-4 rounded-xl border border-card-border bg-background text-sm text-foreground placeholder-muted-text/50 focus:border-primary/50 focus:outline-none transition-colors duration-300 resize-none"
                     />
                   </div>
 
@@ -917,7 +587,7 @@ export default function Home() {
                       <button
                         type="submit"
                         disabled={formStatus === "sending"}
-                        className="h-12 px-8 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-100 hover:shadow-xl hover:shadow-white/10 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                        className="h-12 px-8 rounded-full bg-primary text-background font-semibold text-sm hover:bg-primary/90 hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                       >
                         {formStatus === "sending" ? "Dispatching..." : "Send Message"}
                       </button>
@@ -949,14 +619,15 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </section >
 
       {/* Immersive Slide Drawer Case-Study Modal */}
-      <ProjectModal
+      < ProjectModal
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => setSelectedProject(null)
+        }
       />
-    </div>
+    </div >
   );
 }
 

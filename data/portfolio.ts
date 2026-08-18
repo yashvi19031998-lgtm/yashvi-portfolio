@@ -6,11 +6,11 @@ export const PERSONAL_INFO = {
   linkedin: "https://linkedin.com/in/yashvi-shah-3a1915174",
   role: "Full-Stack Developer",
   experience: "5+ years",
-  tagline: "Building scalable, reliable, performance-focused web applications.",
-  cta: "Let's build something reliable and scalable.",
+  tagline: "Building reliable, scalable web applications.",
+  cta: "Let's talk.",
 };
 
-export const PROFESSIONAL_SUMMARY = `Full-Stack Developer with 5+ years of experience building web applications using Node.js, TypeScript, Next.js, Laravel, and PostgreSQL. Experienced in developing scalable REST APIs, JWT authentication, role-based access control (RBAC), and workflow automation. Proficient in optimizing database performance and integrating third-party systems like payment gateways and ERPs. Focused on writing clean, maintainable code to deliver reliable software solutions.`;
+export const PROFESSIONAL_SUMMARY = `I'm a Full-Stack Developer with over 5 years of experience building web applications. I specialize in Node.js, TypeScript, Next.js, and PostgreSQL. I focus on writing clean, maintainable code to solve real business problems, whether that's building secure APIs, optimizing databases, or developing complete internal tools and CRM platforms.`;
 
 export const SKILLS_CATEGORIES = [
   {
@@ -52,6 +52,10 @@ export const SKILLS_CATEGORIES = [
   {
     title: "Version Control",
     skills: ["Git", "GitHub", "GitLab", "Bitbucket", "GitFlow", "CI/CD (Basic)"]
+  },
+  {
+    title: "Domain Expertise",
+    skills: ["REST API Design", "Database Optimization", "Business Automation", "CRM & ERP Development", "Payment Gateways", "System Architecture"]
   }
 ];
 
@@ -78,6 +82,27 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
   {
+    title: "Rewolk Physio Clinic",
+    subtitle: "Full-stack Next.js, SEO Optimization, Appointment Booking",
+    description: "Developed a comprehensive, SEO-optimized clinic website using Next.js. Built a modern, responsive UI showcasing physiotherapy services, treatments, and client testimonials. Integrated an intuitive appointment booking system and automated patient inquiries to streamline clinic operations.",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://www.rewolkphysio.co.uk/",
+    tech: ["Next.js", "React", "Tailwind CSS", "SEO", "REST APIs"],
+    features: [
+      "Appointment Booking",
+      "Service Portfolios",
+      "SEO Optimization",
+      "Responsive Design",
+      "Patient Testimonials",
+      "Contact Forms"
+    ],
+    challenge: "Building a fast-loading, highly visible local healthcare website with integrated appointment scheduling.",
+    solution: "Leveraged Next.js Server-Side Rendering (SSR) for superior SEO performance and built a streamlined UI for patient bookings.",
+    results: "Increased local online visibility and automated the clinic's initial appointment scheduling workflow.",
+    links: [
+      { label: "Web Link", url: "https://www.rewolkphysio.co.uk/" }
+    ]
+  },
+  {
     title: "BizzPlus CRM & Real Estate Platform",
     subtitle: "Node.js, PostgreSQL, Angular, REST APIs, JSONB",
     description: "Developed a multi-tenant CRM tailored for the real estate sector, enabling isolated data management. Built a dynamic form builder and integrated strict role-based access control along with audit logging. Created an automated lead-property matching algorithm and supported bulk data operations. Implemented communication automations using WhatsApp, Email, and Facebook Lead Ads.",
@@ -99,29 +124,12 @@ export const PROJECTS = [
       { label: "App Link", url: "https://play.google.com/store/apps/details?id=com.app.realplus.crm&hl=en_IN" }
     ]
   },
-  {
-    title: "AtHeal Hospital Management System",
-    subtitle: "Node.js, REST APIs, Database Optimization, RBAC",
-    description: "Built management modules for hospital administration, empowering doctors, patients, and staff through secure access control. Developed REST APIs to serve as the backend for web interfaces and mobile applications. Implemented onboarding workflows, real-time notifications, dynamic forms, and analytics dashboards. Designed database schemas to ensure reliability for sensitive healthcare data.",
-    image: "/images/erp_mockup.png",
-    tech: ["Node.js", "REST APIs", "Database Optimization", "RBAC"],
-    features: [
-      "Hospital Administration",
-      "Secure Access Control",
-      "Onboarding Workflows",
-      "Real-time Notifications",
-      "Dynamic Forms",
-      "Analytics Dashboards"
-    ],
-    challenge: "Handling sensitive healthcare data securely while providing real-time analytics and notifications.",
-    solution: "Implemented robust RBAC with optimized database schemas for fast, reliable, and secure API responses.",
-    results: "Delivered a comprehensive and reliable administration system for hospital workflows."
-  },
+
   {
     title: "JITO Matrimony Platform",
     subtitle: "High-Traffic Matrimonial Application & Admin Panel",
     description: "Developed a scalable matrimonial platform serving over 10,000+ active users. Engineered advanced matchmaking algorithms, secure profile verification workflows, and a comprehensive admin panel for community management. Integrated real-time notifications and payment gateways for premium memberships.",
-    image: "https://image.thum.io/get/width/1200/crop/800/https://jitomatrimony.in/",
+    image: "/images/workspace.png",
     tech: ["Node.js", "PostgreSQL", "REST APIs", "Payment Integrations"],
     features: [
       "Advanced Matchmaking",
@@ -143,7 +151,7 @@ export const PROJECTS = [
     title: "Shree Shubham Trust Management System",
     subtitle: "Node.js, Node Canvas, SMS/WhatsApp Automations",
     description: "Built an end-to-end system featuring membership administration, Aadhaar verification, and payment tracking. Developed financial logic for commission calculations across large-scale trust operations. Implemented automated certificate generation using Node Canvas to dynamically render documents. Integrated SMS and WhatsApp pipelines to trigger instant notifications for trust members.",
-    image: "https://image.thum.io/get/width/1200/crop/800/https://app.shubhamtrust.com/login",
+    image: "/images/workspace.png",
     tech: ["Node.js", "Node Canvas", "SMS/WhatsApp", "PostgreSQL"],
     features: [
       "Membership Administration",
