@@ -58,11 +58,27 @@ export default function Home() {
     if (!formData.name || !formData.email || !formData.message) return;
     setFormStatus("sending");
 
-    setTimeout(() => {
-      setFormStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setFormStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormStatus("error");
+    } finally {
       setTimeout(() => setFormStatus("idle"), 4000);
-    }, 1500);
+    }
   };
 
   return (
