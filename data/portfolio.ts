@@ -108,7 +108,7 @@ export const PROJECTS = [
     title: "BizzPlus CRM & Real Estate Platform",
     subtitle: "Node.js, PostgreSQL, Angular, REST APIs, JSONB",
     description: "Developed a multi-tenant CRM tailored for the real estate sector, enabling isolated data management. Built a dynamic form builder and integrated strict role-based access control along with audit logging. Created an automated lead-property matching algorithm and supported bulk data operations. Implemented communication automations using WhatsApp, Email, and Facebook Lead Ads.",
-    image: "/images/realpluscrm.png",
+    image: "/images/realpluscrm.PNG",
     tech: ["Node.js", "PostgreSQL", "Angular", "REST APIs", "JSONB"],
     features: [
       "Multi-tenant Architecture",
