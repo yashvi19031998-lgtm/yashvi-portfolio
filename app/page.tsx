@@ -120,8 +120,6 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-2 mt-4 text-sm font-medium text-muted-text bg-card-bg border border-card-border w-fit px-4 py-2 rounded-full">
                 <span>📍 {PERSONAL_INFO.location}</span>
-                <span className="w-1 h-1 rounded-full bg-muted-text/30"></span>
-                <span>Open to Remote or Hybrid in Ahmedabad</span>
               </div>
             </ScrollReveal>
 

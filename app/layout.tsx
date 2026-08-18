@@ -21,13 +21,16 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Yashvi Shah | Premium Full Stack Developer Portfolio",
-  description: "Awwwards-quality portfolio of Yashvi Shah, a premium Full Stack Developer specializing in high-end SaaS development, elegant user experiences, and robust scalable applications.",
-  keywords: ["Yashvi Shah", "Full Stack Developer", "Portfolio", "SaaS Developer", "Next.js", "React", "Node.js", "Web Developer"],
+  title: "Yashvi Shah | Full-Stack Developer",
+  description: "Portfolio of Yashvi Shah, a Full-Stack Developer specializing in high-performance web applications, enterprise CRM architectures, and robust backend integrations.",
+  keywords: ["Yashvi Shah", "Full Stack Developer", "Portfolio", "Next.js", "React", "Node.js", "PostgreSQL", "Laravel"],
   authors: [{ name: "Yashvi Shah" }],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
-    title: "Yashvi Shah | Full Stack Developer",
-    description: "Premium SaaS portfolio demonstrating world-class web engineering and modern digital experiences.",
+    title: "Yashvi Shah | Full-Stack Developer",
+    description: "Portfolio of Yashvi Shah, demonstrating scalable full-stack engineering and modern digital experiences.",
     url: "https://yashvishah.dev",
     siteName: "Yashvi Shah Portfolio",
     locale: "en_US",
@@ -54,7 +57,6 @@ export default function RootLayout({
     "url": "https://yashvishah.dev",
     "email": "yashvishah991@gmail.com",
     "sameAs": [
-      "https://github.com",
       "https://www.linkedin.com/in/yashvi-shah-3a1915174"
     ],
     "knowsAbout": [

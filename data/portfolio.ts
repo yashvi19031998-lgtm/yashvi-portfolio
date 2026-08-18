@@ -1,6 +1,6 @@
 export const PERSONAL_INFO = {
   name: "Yashvi Shah",
-  location: "Ahmedabad, India",
+  location: "Ahmedabad,Gujarat,India",
   phone: "+91 91060 60400",
   email: "yashvishah991@gmail.com",
   linkedin: "https://linkedin.com/in/yashvi-shah-3a1915174",
@@ -131,7 +131,7 @@ export const PROJECTS = [
     title: "JITO Matrimony Platform",
     subtitle: "High-Traffic Matrimonial Application & Admin Panel",
     description: "Developed a scalable matrimonial platform serving over 10,000+ active users. Engineered advanced matchmaking algorithms, secure profile verification workflows, and a comprehensive admin panel for community management. Integrated real-time notifications and payment gateways for premium memberships.",
-    image: "/images/workspace.png",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://jitomatrimony.in/",
     tech: ["Node.js", "PostgreSQL", "REST APIs", "Payment Integrations"],
     features: [
       "Advanced Matchmaking",
@@ -153,7 +153,7 @@ export const PROJECTS = [
     title: "Shree Shubham Trust Management System",
     subtitle: "Node.js, Node Canvas, SMS/WhatsApp Automations",
     description: "Built an end-to-end system featuring membership administration, Aadhaar verification, and payment tracking. Developed financial logic for commission calculations across large-scale trust operations. Implemented automated certificate generation using Node Canvas to dynamically render documents. Integrated SMS and WhatsApp pipelines to trigger instant notifications for trust members.",
-    image: "/images/workspace.png",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://app.shubhamtrust.com/login",
     tech: ["Node.js", "Node Canvas", "SMS/WhatsApp", "PostgreSQL"],
     features: [
       "Membership Administration",

@@ -5,6 +5,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { Magnetic } from "../ui/magnetic";
 import { cn } from "@/lib/utils";
 
+import { PERSONAL_INFO } from "@/data/portfolio";
+
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -17,6 +19,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
   
+  const logoName = PERSONAL_INFO.name.split(" ")[0];
+
   // Spring config to make the scroll bar track smooth and fluid
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 120,
@@ -49,9 +53,10 @@ export function Header() {
             href="#home"
             className="text-2xl font-bold tracking-tight text-white hover:opacity-90 transition-all duration-300"
             style={{ fontFamily: "var(--font-display)" }}
-            aria-label="Yashvi Shah Portfolio Home"
+            aria-label={`${PERSONAL_INFO.name} Portfolio Home`}
+            suppressHydrationWarning
           >
-            YS<span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">.</span>
+            {logoName}<span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">.</span>
           </a>
         </Magnetic>
 
