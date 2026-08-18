@@ -71,10 +71,12 @@ export default function Home() {
         setFormStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Server returned an error:", errorData);
         setFormStatus("error");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form (network level):", error);
       setFormStatus("error");
     } finally {
       setTimeout(() => setFormStatus("idle"), 4000);
@@ -915,6 +917,15 @@ export default function Home() {
                       className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-center text-xs font-semibold text-emerald-500"
                     >
                       Message Sent Successfully! Yashvi will get in touch with you shortly.
+                    </motion.div>
+                  )}
+                  {formStatus === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 text-center text-xs font-semibold text-rose-500"
+                    >
+                      Failed to send message. Please check your credentials or email me directly!
                     </motion.div>
                   )}
                 </form>
