@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "Resume", href: "/resume", download: "Yashvi_Shah_Resume.pdf" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -66,6 +67,7 @@ export function Header() {
             <Magnetic key={item.label} range={40} strength={0.25}>
               <a
                 href={item.href}
+                {...(item.download ? { download: item.download, target: "_blank" } : {})}
                 className="text-sm font-medium text-muted-text hover:text-white transition-colors duration-300 relative py-1"
               >
                 {item.label}
