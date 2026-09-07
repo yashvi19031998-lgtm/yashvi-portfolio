@@ -17,6 +17,7 @@ export function Particles({
   const circles = useRef<any[]>([]);
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+  const requestRef = useRef<number>(0);
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -28,6 +29,9 @@ export function Particles({
 
     return () => {
       window.removeEventListener("resize", initCanvas);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
     };
   }, []);
 
@@ -120,7 +124,7 @@ export function Particles({
         drawCircle(circle, true);
       });
     }
-    requestAnimationFrame(animate);
+    requestRef.current = requestAnimationFrame(animate);
   };
 
   return (

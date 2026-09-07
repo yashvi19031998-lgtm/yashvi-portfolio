@@ -28,7 +28,7 @@ export function CursorGlow() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed z-30 h-64 w-64 rounded-full opacity-60 mix-blend-screen blur-[80px] will-change-transform"
+      className="pointer-events-none fixed z-30 h-64 w-64 rounded-full opacity-60 mix-blend-screen will-change-transform"
       style={{
         x: cursorX,
         y: cursorY,

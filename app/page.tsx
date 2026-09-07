@@ -66,8 +66,8 @@ export default function Home() {
       <Particles quantity={50} />
 
       {/* Aurora Radial Spotlights */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] glow-primary rounded-full opacity-35 blur-[120px] -translate-y-1/2 pointer-events-none" />
-      <div className="absolute top-[35vh] right-1/4 w-[700px] h-[700px] glow-secondary rounded-full opacity-25 blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] glow-primary rounded-full opacity-35 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-[35vh] right-1/4 w-[700px] h-[700px] glow-secondary rounded-full opacity-25 pointer-events-none" />
 
       {/* Hero Section */}
       <section id="home" className="w-full max-w-7xl px-6 md:px-12 pt-12 md:pt-20 pb-16 flex flex-col justify-center min-h-[90vh] relative z-10">
@@ -206,7 +206,7 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-card-border relative z-10 overflow-hidden">
         {/* Ambient backlight glow */}
-        <div className="absolute right-0 bottom-0 w-[400px] h-[400px] glow-primary rounded-full opacity-10 blur-[100px] pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-[400px] h-[400px] glow-primary rounded-full opacity-10 pointer-events-none" />
 
         <div className="space-y-16">
           {/* Header */}
@@ -370,7 +370,7 @@ export default function Home() {
       {/* Experience Timeline Section */}
       < section id="experience" className="w-full max-w-7xl px-6 md:px-12 py-24 border-t border-card-border relative z-10 overflow-hidden" >
         {/* Radial backing glow */}
-        < div className="absolute left-0 top-1/4 w-[400px] h-[400px] glow-secondary rounded-full opacity-10 blur-[100px] pointer-events-none" />
+        < div className="absolute left-0 top-1/4 w-[400px] h-[400px] glow-secondary rounded-full opacity-10 pointer-events-none" />
 
         <ScrollReveal direction="up">
           <div className="space-y-4 mb-20 text-center">
